@@ -1,0 +1,5 @@
+name = Webform Block Node Fields
+description = Adds the node fields from the node the webform block is being submitted from to hidden fields in the webform
+core = 7.x
+
+files[] = webform_block_node_fields.module

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+@import url("/modules/system/system.base.css?n5tpjm");
+</style>
+<style>
+@import url("/sites/default/modules/contrib/calendar/css/calendar_multiday.css?n5tpjm");
+@import url("/modules/comment/comment.css?n5tpjm");
+@import url("/sites/default/modules/contrib/date/date_api/date.css?n5tpjm");
+@import url("/sites/default/modules/contrib/date/date_popup/themes/datepicker.1.7.css?n5tpjm");
+@import url("/modules/field/theme/field.css?n5tpjm");
+@import url("/modules/node/node.css?n5tpjm");
+@import url("/modules/search/search.css?n5tpjm");
+@import url("/modules/user/user.css?n5tpjm");
+@import url("/sites/default/modules/contrib/views/css/views.css?n5tpjm");
+</style>
+<style>
+@import url("/sites/default/modules/contrib/ctools/css/ctools.css?n5tpjm");
+</style>
+<style>
+@import url("/sites/default/themes/zen_cfsl/css/styles.css?n5tpjm");
+</style>
+<title>Instant Chat | Capita Financial Software</title>
+<!-- FontDeck - HTML methof of loading fonts - is slow in IE 
+<link rel="stylesheet" href="//f.fontdeck.com/s/css/Xo2abpd/CLG90GHWtA7i71bX/UQ/capita.circle-interactive.co.uk/26635.css" type="text/css" /> -->
+
+<!-- FontDeck - Javascript font loading method, with prevention of "Flash of Unstyled Text" (FOUT) -->
+
+<script type="text/javascript">
+	var html = document.getElementsByTagName('html')[0];
+	html.className += '  wf-loading';
+	setTimeout(function() {
+  html.className = html.className.replace(' wf-loading', '');
+	}, 5000);
+
+	WebFontConfig = { fontdeck: { id: '26635' } };
+
+	(function() {
+  var wf = document.createElement('script');
+  wf.src = 'http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+</script>
+    <script type="text/javascript" src="https://secure.logmeinrescue.com/InstantChat/InstantChat.aspx"></script>
+    <script type="text/javascript">
+        function loadInstantChat(){
+            var ICLoader = new RescueInstantChatLoader();
+            ICLoader.ICContainer = "ICContainer";
+            ICLoader.HostedCSS = "https://secure.logmeinrescue.com/InstantChat/Standard/InstantChat.css";
+            ICLoader.HostedLanguagesForChatOnlyMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForChatOnlyMode.js";
+            ICLoader.HostedLanguagesForAppletMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForAppletMode.js";
+            ICLoader.PrivateCode = document.getElementById("Code").value;
+            ICLoader.Tracking0 = ""; /* optional */
+            ICLoader.Language = ""; /* optional */
+            ICLoader.HostedErrorHandler = function(ErrorName){} /* optional */
+            ICLoader.Start();}
+        function handleRebootOrRefresh(){
+            if ((window.location + "").indexOf("rescuewebsessionid") != -1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+            if (window.location.hash.length == webSessionIdLength + 1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+        }
+    </script>
+</head>
+<body class="page-instant-chat" onload="handleRebootOrRefresh();">
+    <h3>Enter your 6-digit code </span>
+    <p><input id="Code" type="text" /></p>
+    <input id="btn-submit" type="button" value="Connect to technician" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();" />
+    <div id="ICContainer" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 500px; display: none"></div>
+</body>
+</html>

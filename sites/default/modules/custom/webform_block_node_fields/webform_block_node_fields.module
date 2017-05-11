@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Adds the node title from the node the webform block is being submitted from to a hidden field in the webform
+ */
+
+// https://www.drupal.org/node/1470748#comment-5781628
+
+function webform_block_node_fields_form_alter(&$form, $form_state, $form_id) {
+	if ($form_id == 'webform_client_form_1004') {
+		if ($node = menu_get_object()) {
+	    	$form['submitted']['event_details']['event_title']['#value'] = $node->title;
+			$form['submitted']['event_details']['event_date']['#value'] = $node->field_dates['und'][0]['value'];
+	    	$form['submitted']['event_details']['event_venue']['#value'] = $node->field_venue['und'][0]['value'];
+		}
+  	}
+}
+
+?>

@@ -1,0 +1,516 @@
+<?php
+/**
+ * circle_wysiwyg_config.install
+ */
+
+/**
+ *
+ * todo:
+ *
+ * add a basic wysiwyg profile & filter format
+ *
+ * = add these projects =
+ * imce mkdir
+ * transliteration
+ * image resise filter
+ *
+ * (slightly different, but...)
+ * filefield sources - not yet ready for D7
+ *
+ */
+
+define('ADVANCED_WYSIWYG_FORMAT_NAME',    'Advanced WYSIWYG');
+define('ADVANCED_WYSIWYG_LIBRARY_NAME',   'ckeditor'        );
+define('BASIC_WYSIWYG_FORMAT_NAME',       'Basic WYSIWYG'   );
+define('BASIC_WYSIWYG_LIBRARY_NAME',      'ckeditor'        );
+
+function circle_wysiwyg_config_install() {
+  _circle_wysiwyg_config_save_advanced_wysiwyg_filter_format(ADVANCED_WYSIWYG_FORMAT_NAME);
+  _circle_wysiwyg_config_save_basic_wysiwyg_filter_format(BASIC_WYSIWYG_FORMAT_NAME);
+  _circle_wysiwyg_config_save_advanced_wysiwyg_profile(ADVANCED_WYSIWYG_FORMAT_NAME, ADVANCED_WYSIWYG_LIBRARY_NAME);
+  _circle_wysiwyg_config_save_basic_wysiwyg_profile(BASIC_WYSIWYG_FORMAT_NAME, BASIC_WYSIWYG_LIBRARY_NAME);
+  _circle_wysiwyg_config_save_imce_profiles();
+}
+
+/****************/
+
+function _circle_wysiwyg_config_machine_name($text) {
+  $machine_name = strtolower(str_replace(' ', '_', $text));
+  return $machine_name;
+}
+
+function _circle_wysiwyg_config_save_basic_wysiwyg_filter_format($format_name) {
+  $filters = array(
+    // URL filter.
+    'filter_url' => array(
+      'weight' => 0,
+      'status' => 1,
+    ),
+    // HTML filter - todo: adjust default settings?
+//    'filter_html' => array(
+//      'weight' => 1,
+//      'status' => 1,
+//    ),
+    // HTML corrector filter.
+    'filter_htmlcorrector' => array(
+      'weight' => 10,
+      'status' => 1,
+    ),
+    // Add line break filter
+   'filter_autop' => array(
+    'weight' => 4,
+    'status' => 1,
+    ),    
+);
+
+  _circle_wysiwyg_config_save_filter_format($format_name, $filters);
+}
+
+function _circle_wysiwyg_config_save_advanced_wysiwyg_filter_format($format_name) {
+
+
+
+
+  $wysiwyg_filter_settings = array(
+    'valid_elements' => 'a[!href|target<_blank|title|class],div[align<center?justify?left?right|class],p[align<center?justify?left?right|style],br,span,em,strong,cite,code,blockquote[class],ul,ol,li,dl,dt,dd,table,thead,tbody,tr,td[style],h2[class],h3[class],h4[class],img[src|style]',
+    'allow_comments' => '0',
+    'nofollow_policy' => 'disabled',
+    'nofollow_domains' =>
+    array (
+    ),
+    'style_color' =>
+    array (
+      'color' => 0,
+      'background' => 0,
+      'background-color' => 0,
+      'background-image' => 0,
+      'background-repeat' => 0,
+      'background-attachment' => 0,
+      'background-position' => 0,
+    ),
+    'style_font' =>
+    array (
+      'font' => 0,
+      'font-family' => 0,
+      'font-size' => 0,
+      'font-size-adjust' => 0,
+      'font-stretch' => 0,
+      'font-style' => 0,
+      'font-variant' => 0,
+      'font-weight' => 0,
+    ),
+    'style_text' =>
+    array (
+      'text-align' => 'text-align',
+      'text-decoration' => 0,
+      'text-indent' => 0,
+      'text-transform' => 0,
+      'letter-spacing' => 0,
+      'word-spacing' => 0,
+      'white-space' => 0,
+      'direction' => 0,
+      'unicode-bidi' => 0,
+    ),
+    'style_box' =>
+    array (
+      'margin' => 0,
+      'margin-top' => 0,
+      'margin-right' => 0,
+      'margin-bottom' => 0,
+      'margin-left' => 0,
+      'padding' => 0,
+      'padding-top' => 0,
+      'padding-right' => 0,
+      'padding-bottom' => 0,
+      'padding-left' => 0,
+    ),
+    'style_border-1' =>
+    array (
+      'border' => 0,
+      'border-top' => 0,
+      'border-right' => 0,
+      'border-bottom' => 0,
+      'border-left' => 0,
+      'border-width' => 0,
+      'border-top-width' => 0,
+      'border-right-width' => 0,
+      'border-bottom-width' => 0,
+      'border-left-width' => 0,
+    ),
+    'style_border-2' =>
+    array (
+      'border-color' => 0,
+      'border-top-color' => 0,
+      'border-right-color' => 0,
+      'border-bottom-color' => 0,
+      'border-left-color' => 0,
+      'border-style' => 0,
+      'border-top-style' => 0,
+      'border-right-style' => 0,
+      'border-bottom-style' => 0,
+      'border-left-style' => 0,
+    ),
+    'style_dimension' =>
+    array (
+      'height' => 0,
+      'line-height' => 0,
+      'max-height' => 0,
+      'max-width' => 0,
+      'min-height' => 0,
+      'min-width' => 0,
+      'width' => 0,
+    ),
+    'style_positioning' =>
+    array (
+      'bottom' => 0,
+      'clip' => 0,
+      'left' => 0,
+      'overflow' => 0,
+      'right' => 0,
+      'top' => 0,
+      'vertical-align' => 0,
+      'z-index' => 0,
+    ),
+    'style_layout' =>
+    array (
+      'clear' => 0,
+      'display' => 0,
+      'float' => 0,
+      'position' => 0,
+      'visibility' => 0,
+    ),
+    'style_list' =>
+    array (
+      'list-style' => 0,
+      'list-style-image' => 0,
+      'list-style-position' => 0,
+      'list-style-type' => 0,
+    ),
+    'style_table' =>
+    array (
+      'border-collapse' => 0,
+      'border-spacing' => 0,
+      'caption-side' => 0,
+      'empty-cells' => 0,
+      'table-layout' => 0,
+    ),
+    'style_user' =>
+    array (
+      'cursor' => 0,
+      'outline' => 0,
+      'outline-width' => 0,
+      'outline-style' => 0,
+      'outline-color' => 0,
+      'zoom' => 0,
+    ),
+    'rule_valid_classes' =>
+    array (
+      0 => 'a*',
+      2 => 'b*',
+      4 => 'c*',
+      6 => 'd*',
+      8 => 'e*',
+      10 => 'f*',
+      12 => 'g*',
+      14 => 'h*',
+      16 => 'i*',
+      18 => 'j*',
+      20 => 'k*',
+      22 => 'l*',
+      24 => 'm*',
+      26 => 'n*',
+      28 => 'o*',
+      30 => 'p*',
+      32 => 'q*',
+      34 => 'r*',
+      36 => 's*',
+      38 => 't*',
+      40 => 'u*',
+      42 => 'v*',
+      44 => 'w*',
+      46 => 'x*',
+      48 => 'y*',
+      50 => 'z*',
+    ),
+    'rule_valid_ids' =>
+    array (
+    ),
+    'rule_style_urls' =>
+    array (
+    ),
+  );
+
+  $filters = array();
+  $filters['filter_url'] = array(
+    'weight' => 1,
+    'status' => 1,
+    'settings' => array(
+      'filter_url_length' => '72',
+    )
+  );
+  $filters['wysiwyg'] = array(
+    'weight' => 5,
+    'status' => 1,
+    'settings' => $wysiwyg_filter_settings
+  );
+  $filters['filter_htmlcorrector'] = array(
+    'weight' => 10,
+    'status' => 1,
+    'settings' => array()
+  );
+    // HTML filter - todo: adjust default settings?
+//  $filters['filter_html'] = array(
+//    'weight' => 1,
+//    'status' => 1,
+//    'settings' => array()
+//  );
+    // Add line break filter
+  $filters['filter_autop'] = array(
+    'weight' => 4,
+    'status' => 1,
+    'settings' => array()
+  );
+
+  _circle_wysiwyg_config_save_filter_format($format_name, $filters);
+}
+
+function _circle_wysiwyg_config_save_filter_format($format_name, $filters) {
+  $format = new stdClass();
+  $format->format = _circle_wysiwyg_config_machine_name($format_name);
+  $format->name = $format_name;
+  $format->status = 1;
+  $format->weight = 10;
+  $format->filters = $filters;
+  filter_format_save($format);
+}
+
+function _circle_wysiwyg_config_save_advanced_wysiwyg_profile($format, $editor) {
+  $profile = array (
+    'default' => 1,
+    'user_choose' => 0,
+    'show_toggle' => 1,
+    'theme' => 'advanced',
+    'language' => 'en',
+    'buttons' =>
+    array (
+      'default' =>
+      array (
+        'Bold' => 1,
+        'Italic' => 1,
+        'JustifyLeft' => 1,
+        'JustifyCenter' => 1,
+        'JustifyRight' => 1,
+        'BulletedList' => 1,
+        'NumberedList' => 1,
+        'Link' => 1,
+        'Unlink' => 1,
+        'Anchor' => 1,
+        'Image' => 1,
+        'Blockquote' => 1,
+        'Source' => 1,
+        'PasteText' => 1,
+        'RemoveFormat' => 1,
+        'Format' => 1,
+        'Find' => 1,
+        'Replace' => 1,
+        'SpellChecker' => 1,
+        'Scayt' => 1,
+      ),
+      'imce' =>
+      array (
+        'imce' => 1,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 0,
+    'apply_source_formatting' => 1,
+    'paste_auto_cleanup_on_paste' => 1,
+    'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'theme',
+    'css_path' => '',
+    'css_classes' => '',
+  );
+  _circle_wysiwyg_config_save_wysiwyg_profile($profile, $format, $editor);
+}
+
+function _circle_wysiwyg_config_save_basic_wysiwyg_profile($format, $editor) {
+  $profile = array (
+    'default' => 1,
+    'user_choose' => 0,
+    'show_toggle' => 1,
+    'theme' => 'advanced',
+    'language' => 'en',
+    'buttons' =>
+    array (
+      'default' =>
+      array (
+        'Bold' => 1,
+        'Italic' => 1,
+        'JustifyLeft' => 0,
+        'JustifyCenter' => 0,
+        'JustifyRight' => 0,
+        'BulletedList' => 1,
+        'NumberedList' => 1,
+        'Link' => 1,
+        'Unlink' => 0,
+        'Anchor' => 0,
+        'Image' => 0,
+        'Blockquote' => 0,
+        'Source' => 0,
+        'PasteText' => 1,
+        'RemoveFormat' => 0,
+        'Format' => 0,
+        'Find' => 1,
+        'Replace' => 1,
+        'SpellChecker' => 1,
+        'Scayt' => 1,
+      ),
+      'imce' =>
+      array (
+        'imce' => 0,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 0,
+    'apply_source_formatting' => 1,
+    'paste_auto_cleanup_on_paste' => 1,
+    'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'theme',
+    'css_path' => '',
+    'css_classes' => '',
+  );
+  _circle_wysiwyg_config_save_wysiwyg_profile($profile, $format, $editor);
+}
+
+function _circle_wysiwyg_config_save_wysiwyg_profile($profile, $format, $editor) {
+  $format = _circle_wysiwyg_config_machine_name($format);
+  db_merge('wysiwyg')
+    ->key(array('format' => $format))
+    ->fields(array('editor' => $editor,
+                   'settings'=> serialize($profile)
+          ))
+    ->execute();
+  cache_clear_all('wysiwyg_profiles', 'cache');
+}
+
+function _circle_wysiwyg_config_save_imce_profiles() {
+  $profiles = array(
+    1 =>
+    array (
+      'name' => 'User-1',
+      'usertab' => 1,
+      'filesize' => 0,
+      'quota' => 0,
+      'tuquota' => 0,
+      'extensions' => '*',
+      'dimensions' => '1200x1200',
+      'filenum' => 0,
+      'directories' =>
+      array (
+        0 =>
+        array (
+          'name' => '.',
+          'subnav' => 1,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 1,
+          'resize' => 1,
+        ),
+      ),
+      'thumbnails' =>
+      array (
+        0 =>
+        array (
+          'name' => 'Small',
+          'dimensions' => '90x90',
+          'prefix' => 'small_',
+          'suffix' => '',
+        ),
+        1 =>
+        array (
+          'name' => 'Medium',
+          'dimensions' => '120x120',
+          'prefix' => 'medium_',
+          'suffix' => '',
+        ),
+        2 =>
+        array (
+          'name' => 'Large',
+          'dimensions' => '180x180',
+          'prefix' => 'large_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+    2 =>
+    array (
+      'name' => 'editors',
+      'usertab' => 0,
+      'filesize' => '10',
+      'quota' => '0',
+      'tuquota' => '0',
+      'extensions' => 'gif png jpg jpeg',
+      'dimensions' => '800x600',
+      'filenum' => '1',
+      'directories' =>
+      array (
+        0 =>
+        array (
+          'name' => 'editors',
+          'subnav' => 0,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 0,
+          'resize' => 0,
+        ),
+      ),
+      'thumbnails' =>
+      array (
+        0 =>
+        array (
+          'name' => 'Thumb',
+          'dimensions' => '90x90',
+          'prefix' => 'thumb_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+  );
+
+/*
+mysql> SELECT * FROM role ORDER BY rid;
++-----+--------------------+--------+
+| rid | name               | weight |
++-----+--------------------+--------+
+|   1 | anonymous user     |      0 |
+|   2 | authenticated user |      1 |
+|   3 | administrator      |      2 |
++-----+--------------------+--------+
+*/
+
+  $roles_profiles = array (
+    3 => array('public_pid' => 1),
+    2 => array('public_pid' => 2),
+    4 => array('public_pid' => 2),
+    5 => array('public_pid' => 2),
+    6 => array('public_pid' => 2),
+    1 => array('public_pid' => 0),
+  );
+
+  variable_set('imce_profiles',        $profiles         );
+  variable_set('imce_roles_profiles',  $roles_profiles   );
+}
