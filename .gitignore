@@ -2,7 +2,7 @@
 sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
-files/
+# files/*       #Needed to transfer some new files from Pooks
 # sites/*/files #Needed to transfer some new files from Pooks
 sites/*/private
 
@@ -41,3 +41,4 @@ xmlrpc.php
 # Remove Apple anoyances
 ._.DS_Store
 .DS_Store
+._
