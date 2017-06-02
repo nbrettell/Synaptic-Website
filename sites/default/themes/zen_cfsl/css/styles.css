@@ -48,8 +48,8 @@ body {
 	font-size:0.85em;
 	color:#747678;
 	line-height:1em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
-	font-weight:normal; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
+	font-weight:normal;
 	font-style:normal;
 }
 #breadcrumb-wrapper .inner {
@@ -62,7 +62,7 @@ body {
 	float:left;
 }
 #breadcrumb-wrapper span.easy-breadcrumb_segment-title {
-	font-family: 'BlsW-Lt', Arial, sans-serif;	
+	font-family: 'BlsW-Lt', Arial, sans-serif;
 }
 .breadcrumb a {
 	color:#4e2683;
@@ -77,7 +77,7 @@ body {
 h1#page-title {
 	margin: 0 0 1em;
 }
-/* Used to be .node *:first-child 
+/* Used to be .node *:first-child
 .content-main *:first-child {
 	margin-top:0;
 } */
@@ -108,7 +108,7 @@ label {
 
 ol.bold li {
 	font-family:'BlsW-Bd', Arial, sans-serif; font-weight:normal; font-style:normal;
-	
+
 }
 
 /* @end */
@@ -118,11 +118,11 @@ ol.bold li {
 /*** Regions ***/
 
 /* clearfix */
-.region-header:after, 
+.region-header:after,
 #navigation:after,
 #breadcrumb-wrapper:after,
 .region-main-banner:after,
-.region-content-top:after  
+.region-content-top:after
 { visibility: hidden; display: block; content: ""; clear: both; height: 0; zoom: 1; }
 
 .region:after {
@@ -226,7 +226,7 @@ div.field-name-field-author .node-article-author {
 	padding: 7px 5px 0 85px;
 	position: relative;
 	background-color: #F2F2F2;
-	height: 67px; /* Height 74px minus top padding 7px */
+	height: 74px;
 	overflow: hidden;
 	margin-bottom: 0.5em;
 }
@@ -258,7 +258,7 @@ div.field-name-field-publish-date {
 	background-color: #aaa;
 	padding: 7px 10px 9px;
 	color: #fff;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	margin: -20px 0 1.75em;
 	line-height: 1em;
@@ -311,14 +311,14 @@ div.field-name-field-publish-date {
 	color: #fff;
 	padding: 7px 12px 8px;
 	font-size: 1.15em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	position: relative;
 	bottom: -33px;
 	margin-top: 2em;
 	line-height: 1em;
 }
-/* Real block for extra about content */ 
+/* Real block for extra about content */
 #main-main-banner .content-main .block.about h2.block-title {
 	padding: 7px 12px 8px;
 	font-size: 18px;
@@ -335,7 +335,7 @@ div.field-name-field-publish-date {
 .field-name-field-about-block-body h3 {
 	margin-top: 1em;
 }
-/* Real block for extra about content */  
+/* Real block for extra about content */
 #main-main-banner .content-main .block.about {
 	margin-top: 2em;
 	font-size: 1em;
@@ -377,7 +377,7 @@ div.field-name-field-publish-date {
 }
 #navigation #main-menu {
 	width:664px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 #navigation .block {
 	margin:0;
@@ -390,7 +390,7 @@ div.field-name-field-publish-date {
 	padding: 0;
 	text-align: left; /* LTR */
 	height:50px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 #navigation ul.links li,
 #navigation ul.menu li {
@@ -478,13 +478,13 @@ body.node-type-training-video #navigation ul.links li.menu-395 a
 	line-height:1em;
 	border:none;
 	width:173px;
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
-	
+
 	-webkit-border-radius: 14px;
 	-moz-border-radius: 14px;
 	border-radius: 14px;
-	
+
 	/*-webkit-box-shadow: 0px 2px 5px rgba(198, 198, 198, 1) inset;
 	-moz-box-shadow:    0px 2px 5px rgba(198, 198, 198, 1) inset;
 	box-shadow:         0px 2px 5px rgba(177, 177, 177, 1) inset;*/
@@ -519,7 +519,7 @@ body.node-type-training-video #navigation ul.links li.menu-395 a
 	float:left;
 	border-right:1px solid #C6C6C6;
 	font-size:1em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 .menu-block-2 ul.menu li.last {
@@ -711,7 +711,7 @@ body.section-provider-solutions .menu-block-2 ul.menu li.menu-mlid-514 a,
 	background-color: #00A0C0;
 }
 
-/* Light Blue */ 
+/* Light Blue */
 #widget_pager_bottom_front_page_slideshow-block .views_slideshow_pager_field_item.active.light-blue {
 	background-color: #00A0C0;
 }
@@ -842,7 +842,7 @@ body #main-main-banner #block-menu-menu-synaptic-guides.label .block-content {
 }
 /* Synaptic Guides articles blocks overrides */
 #main-main-banner .block-views.synaptic-guides-articles .block-content {
-	padding-bottom: 35px;	
+	padding-bottom: 35px;
 }
 
 /* Imageblock override */
@@ -853,7 +853,7 @@ body #main-main-banner #block-menu-menu-synaptic-guides.label .block-content {
 	margin:0 0 0.5em;
 }
 
-#main-main-banner .block ul:first-of-type, 
+#main-main-banner .block ul:first-of-type,
 #main-main-banner .block ol:first-of-type {
 	margin-top: 0;
 }
@@ -866,7 +866,7 @@ body #main-main-banner #block-menu-menu-synaptic-guides.label .block-content {
 	color:#fff;
 	background-color:#00A0C0;
 	font-size:1.15em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 /* Synaptic Product sub-menu overide */
@@ -895,7 +895,7 @@ body #main-main-banner #block-menu-menu-synaptic-guides.label .block-content {
 
 /* @group More link styling */
 
-a.morelink  
+a.morelink
 /* , #main .block-views div.more-link a (no longer applies as how it's being done has been changed) */ {
 	padding:0 0 0 24px;
 	background-position:left center;
@@ -920,7 +920,7 @@ a.morelink
 }
 div.links {
 	margin-top: 3em;
-	color:#00A0C0; 
+	color:#00A0C0;
 	background-image:url(../images/ico-backlink-lightblue-big.png);
 }
 /* More link styling in blocks*/
@@ -1050,7 +1050,7 @@ body.front .block a.morelink.external.lightblue, body.page-node-244 .block a.mor
 
 /* @group Block top banner image */
 
-/* <front> .block h2.title [height] = 35px 
+/* <front> .block h2.title [height] = 35px
    block-content padding-top = 14px */
 .block img.topbanner,
 .block-imageblock.label img.imageblock-image {
@@ -1097,10 +1097,10 @@ body #main .block h3 {
 
 /* @end */
 
-/* @group Views blocks */ 
+/* @group Views blocks */
 
 .block-views,
-/* Synaptic Guides menu (masquerading as a views block) */ 
+/* Synaptic Guides menu (masquerading as a views block) */
 #block-menu-menu-synaptic-guides {
 	background-color: #F2F2F2;
 }
@@ -1188,7 +1188,7 @@ body.front #main-main-banner .region-main-banner .block.label:nth-child(2n+2) {
 	display: table;
 }
 .block-views.title-icons div.views-field-title a span.icon span.text {
-	display: table-cell; 
+	display: table-cell;
 	vertical-align: middle;
 	padding-left: 36px;
 	height: 33px;
@@ -1207,7 +1207,7 @@ body.front #main-main-banner .region-main-banner .block.label:nth-child(2n+2) {
 	Synaptic Guides = .linktype-90
 	White paper = .linktype-91
 */
- 
+
 /* Blog */
 .block-views.title-icons div.views-field-title a span.icon.linktype-84, .block-views.title-icons div.views-field-title a span.icon.research_blog {
 	background-image: url(../images/ico-link-blog-lightblue-big.png);
@@ -1446,11 +1446,11 @@ body.page-node-889 .node-article-author {
 /* Twitter follow button overrides */
 #block-views-tweets-block .view-footer iframe#twitter-widget-0 a#follow-button.btn {
 	background-color: #00A0C0 !important;
-} 
+}
 
 /* Date and intent fields */
 #block-views-tweets-block .float-wrapper {
-	margin-top: 0.5em;	
+	margin-top: 0.5em;
 }
 #block-views-tweets-block .float-wrapper .created-time {
 	float: left;
@@ -1632,7 +1632,7 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	box-shadow: none;
 	margin: 0;
 	border: none;
-} 
+}
 /*#main #block-block-16 img.logo.product { margin-right:10px; }
 #main #block-block-16 img.logo.comparator { margin-right:26px; }
 #main #block-block-16 img.logo.client-care { margin-right:43px; }
@@ -1652,7 +1652,7 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	padding-top:20px;
 }
 /* Arrow */
-#main .region-info-dropdowns .block { 
+#main .region-info-dropdowns .block {
 	background-image:url(../images/ico-arrow-pop-box_training.png);
 	background-position:30px top;
 	background-repeat:no-repeat;
@@ -1695,7 +1695,7 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	background-color:#00A0C0;
 	border-bottom:none;
 	color:#fff;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 .region-info-dropdowns .block table tr:last-child td {
@@ -1727,7 +1727,7 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	width:738px;
 	line-height:1.3em;
 	font-size:1em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	margin:2em 0 0;
 }
@@ -1765,7 +1765,7 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	line-height: 1.2em; /* 1.5rem / 1.17em = 1.28205em */
 	/*margin-top: 1.5em;
 	margin-bottom: 0.5em;*/
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	color:#00A0C0;
 }
@@ -1848,7 +1848,7 @@ body.page-node-128 .region-content-bottom .block:nth-of-type(3n+3) {
 #main .region-content-bottom #block-block-66 { background:url(../images/logo-sup-dl-suite.png) 121px 41px no-repeat; }
 #main .region-content-bottom #block-block-66 .block-content { padding-right:100px; }
 
-#main .region-content-bottom #block-block-40 .block-content { 
+#main .region-content-bottom #block-block-40 .block-content {
 	padding-right:75px;
 }
 
@@ -1884,7 +1884,7 @@ body #main-main-banner #sitemap .block:nth-child(4n+1) {
 body #main-main-banner #sitemap .block:nth-child(4n+4),
 /* < IE9 fix */
 html.lt-ie9 body #main-main-banner #sitemap #block-menu-block-26  {
-	margin-right: 0;	
+	margin-right: 0;
 }
 
 body #main-main-banner #sitemap .block .block-content {
@@ -1922,7 +1922,7 @@ body #main-main-banner #sitemap .block .block-content {
 	font-size:0.75em;
 	line-height:1em;
 	padding:8px 16px 8px;
-	font-family:Arial, Helvetica, sans-serif; 
+	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
 #footer p {
@@ -1936,7 +1936,7 @@ body #main-main-banner #sitemap .block .block-content {
 }
 #footer #block-block-3 {
 	margin:9px 30px 0 0;
-	
+
 }
 #footer #block-block-4, #footer #block-block-5 {
 	float:right;
@@ -1944,13 +1944,13 @@ body #main-main-banner #sitemap .block .block-content {
 #footer #block-block-4 h2.block-title, #footer #block-block-5 h2.block-title {
 	font-size:1em;
 	line-height:1em;
-	font-family:Arial, Helvetica, sans-serif; 
+	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	color:#fff;
 	margin:9px 12px 0 0;
 }
 #footer #block-block-4 *, #footer #block-block-5 * {
-	float:left;	
+	float:left;
 }
 #footer #block-block-4 {
 	margin-right:20px;
@@ -1974,7 +1974,7 @@ body #main-main-banner #sitemap .block .block-content {
 }
 #block-menu-block-3 ul.menu li.last {
 	border-right:none;
-	
+
 }
 #block-menu-block-3 ul.menu li a {
 	text-decoration:none;
@@ -1992,7 +1992,7 @@ body #main-main-banner #sitemap .block .block-content {
 	font-size: 0.75em;
 	color: #a8a8a8;
 	text-align: center;
-	font-family:Arial, Helvetica, sans-serif; 
+	font-family:Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
 
@@ -2074,7 +2074,7 @@ body #main-main-banner #sitemap .block .block-content {
 	border: 4px solid #04476F;
 	padding: 6px 7px 2px;
 	font-size: 1em;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 
@@ -2155,7 +2155,7 @@ body.page-node-244 #main-main-banner .block.connection-articles .block-content .
 	background: #E0E0E0;
 	margin: -30px 0 0 0;
 	padding: 30px 0 0 0;
-} 
+}
 /* Research & Opinion page */
 body.page-node-244 .block.connection-articles .view-header {
 	/*width: 312px;*/
@@ -2242,10 +2242,14 @@ body #main .block.connection-articles.brightgreen .view-header .details h4.issue
 body #main .block.connection-articles.purple .view-header .details h4.issue {
 	background: #4F2683;
 }
+/* Deep Green */
+body #main .block.connection-articles.deepgreen .view-header .details h4.issue {
+	background: #008566;
+}
 
 body #main .block.connection-articles .view-header .details a.view {
 	display: block;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	padding: 1px 0 1px 30px;
 	background-position: 0 center;
@@ -2282,6 +2286,11 @@ body #main .block.connection-articles.purple .view-header .details a.view {
 	color: #4F2683;
 	background-image: url('../images/ico-link-external-purple-big.png');
 }
+/* Deep Green */
+body #main .block.connection-articles.deepgreen .view-header .details a.view {
+	color: #008566;
+	background-image: url('../images/ico-link-external-deepgreen-big.png');
+}
 
 /* Bottom grad for scrolled list */
 .block.connection-articles .bottom-grad {
@@ -2315,7 +2324,7 @@ body #main .block.connection-articles.purple .view-header .details a.view {
 	background-image: url(../images/ico-link-connection-white-big.png);
 	background-repeat: no-repeat;
 	background-color: #C9005C;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	color: #fff;
 	cursor: pointer;
@@ -2408,7 +2417,7 @@ body #main-main-banner #block-views-5af7c61a64894bca563354129b4c963a .view-conte
 	/*margin: 0 0 0 -6px;*/
 	left: auto;
 	bottom: auto;
-	
+
 }
 /* @end */
 
@@ -2523,23 +2532,23 @@ body #main-main-banner #block-views-5af7c61a64894bca563354129b4c963a .view-conte
 /*
 Three years of delivering success
 L&G Investment Management
-/research-and-opinion/connection/q1-2017/three-years-of-delivering-success 
+/research-and-opinion/connection/q1-2017/three-years-of-delivering-success
 */
 body.page-node-990 .field-name-field-author,
-/* 
+/*
 Update on the Investec Cautious Managed Fund
 Investec Asset Management
 /research-and-opinion/connection/q1-2017/delivered-2016-prepared-2017
 */
 body.page-node-993 .field-name-field-author,
-/* 
+/*
 Myths about risk
 M&G Multi-Asset team
 M&G Investments
 /research-and-opinion/connection/q1-2017/myths-about-risk
 */
 body.page-node-996 .field-name-field-author,
-/* 
+/*
 Synaptic Risk Rating Tables
 */
 body.page-node-998 .field-name-field-author
@@ -2551,6 +2560,100 @@ body.page-node-998 .field-name-field-author
 	display: none;
 }
 
+/* @end */
+
+/* @group 2017 Q2 */
+
+/** Article: BMO: Real life investing... **/
+/* Hiding author entity reference */
+body.page-node-1044 .field-name-field-author {
+	display: none;
+}
+
+/** Article: Henderson Rowe: Verbatim Asset Management: The good, the bad and the ugly **/
+body.page-node-1048 .white-dropshadow-text-box div.table {
+	display: table;
+	margin:2em 0 0;
+}
+body.page-node-1048 .white-dropshadow-text-box div.table .row {
+	display: table-row;
+	margin:0;
+}
+body.page-node-1048 .white-dropshadow-text-box div.table .row > div {
+	display: table-cell;
+	vertical-align: middle;
+	padding-bottom:2em;
+}
+body.page-node-1048 .white-dropshadow-text-box div.table .row .logo {
+	width: 30%;
+}
+body.page-node-1048 .white-dropshadow-text-box .logo img {
+	border:none;
+	box-shadow: none;
+	height: auto;
+	width: 100%;
+	margin:0;
+}
+body.page-node-1048 .white-dropshadow-text-box .info {
+	padding-left:1em;
+}
+
+@media (max-width: 767px) {
+	body.page-node-1048 .white-dropshadow-text-box div.table {
+		display: block;
+	}
+	body.page-node-1048 .white-dropshadow-text-box div.table .row {
+		display: block;
+		padding-bottom: 1em;
+	}
+	body.page-node-1048 .white-dropshadow-text-box div.table .row > div {
+		display: block;
+		vertical-align: middle;
+		padding-bottom:1em;
+	}
+	body.page-node-1048 .white-dropshadow-text-box div.table .row .logo {
+		width: 230px;
+	}
+	body.page-node-1048 .white-dropshadow-text-box .info {
+		padding-left:0;
+	}
+}
+
+/** Article: Rathbones **/
+table.rathbones-2017-q2 td.col-width {
+	width: 14%;
+}
+.content-main table.rathbones-2017-q2 td img {
+	border: none;
+	box-shadow: none;
+	margin:0.25em 0 0;
+}
+/** Article: BMO: Real life investing... **/
+/* Hiding author entity reference */
+body.page-node-1047 .field-name-field-author {
+	display: none;
+}
+/** Article: Synaptic: NEW Synaptic research tool for retirement income modelling and drawdown **/
+/* Hiding author entity reference */
+body.page-node-1049 .field-name-field-author {
+	display: none;
+}
+/** Article: Synaptic Risk Rating Table **/
+/* Hiding author entity reference */
+body.page-node-1062 .field-name-field-author {
+	display: none;
+}
+/* Removing name from menu Views blocks */
+#block-views-a0a1f4cdaa9ef1f4a2dc71afe2b75ae3 .views-row-19 .name,
+#block-views-9c2e8004bc33d7a1663a89faa6f1c81a .views-row-19 .name {
+	display: none;
+}
+
+/** Article: Aviva: Income Protection: cover that works when your clients can’t **/
+ /* Hiding author entity reference */
+body.page-node-1064 .field-name-field-author {
+	display: none;
+}
 
 /* @end */
 
@@ -2616,7 +2719,7 @@ body.page-node-998 .field-name-field-author
 }
 #main-main-banner .block.spotlight div.author p.name {
 	margin-top: 7px;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 
@@ -2634,7 +2737,7 @@ body.page-node-998 .field-name-field-author
 	font-size: 1.25em;
 	line-height: 1.2;
 	margin: 0;
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 
@@ -2669,7 +2772,7 @@ div.field-name-field-article-details, div.grey-text-block, blockquote {
 	margin-top: 2.5em;
 	padding: 1em 1em 0.25em;
 	background: #F2F2F2;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 /*div.field-name-field-article-details > .field-items > .field-item > *:last-child {
@@ -2679,17 +2782,17 @@ div.grey-text-block, blockquote {
 	margin: 2em 0;
 }
 div.grey-text-block.notbold {
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 blockquote {
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:italic;
 	/*font-size:1.1em;*/
 	/*line-height:1.3;*/
 }
 blockquote p.author {
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	margin-top:-0.5em;
 }
@@ -2698,6 +2801,28 @@ div.field-name-field-article-details *, div.grey-text-block *, blockquote * {
 }
 /* @end */
 
+/* @group White text box with dropshadow */
+
+div.white-dropshadow-text-box {
+	border: 1px solid #cecece;
+    -moz-box-shadow: 1px 1px 5px #e8e8e8;
+    box-shadow: 1px 1px 5px #e8e8e8;
+    padding:1em;
+    margin:2em 0;
+}
+div.white-dropshadow-text-box.width-2-col {
+	width: 727px;
+}
+div.white-dropshadow-text-box > * {
+	margin-top:0;
+}
+@media (max-width: 1048px) {
+	div.white-dropshadow-text-box.width-2-col {
+		width: 100%;
+	}
+}
+
+/* @end */
 
 /* @group Pull quote */
 
@@ -2705,7 +2830,7 @@ div.pullquote {
 	color: #03466E;
 	font-size: 1.2em;
 	line-height: 1.2em;
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	width: 280px;
 	padding: 1em 1em 0.5em;
@@ -2722,7 +2847,7 @@ div.pullquote img.author {
 	margin: -0.5em 0.5em 1em 0;
 }
 div.pullquote p.author {
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	font-size: 0.85em;
 	margin-top: -0.5em;
@@ -2746,7 +2871,7 @@ div.capita-quote.raspberry {
 div.capita-quote blockquote {
 	background-color: #00a1c1;
 	color: #fff;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	line-height: 1.4;
 	padding:0.75em 0.75em 1em;
@@ -2758,7 +2883,7 @@ div.capita-quote blockquote *:last-of-type {
 	margin-bottom: 0;
 }
 p.capita-quote.author {
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	margin:-2.5em 38px 3em 0;
 	font-size: 0.9em;
@@ -2833,7 +2958,7 @@ div.col2.last {
 	clear:right;
 }*/
 
-/* Demo page 4 column layout 
+/* Demo page 4 column layout
 
 div.col4-wrapper:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; zoom: 1; }
 div.col4-wrapper {
@@ -2860,6 +2985,11 @@ table thead tr td, table tr th {
 	background-color:#D8E7EE;
 	vertical-align:top;
 	text-align:left;
+}
+table.small tr td,
+table.small th td {
+	font-size: 0.85em;
+	line-height: 1.2;
 }
 /* Secondary table header */
 table tr.table-h2 td, table tr td.table-h2 {
@@ -2888,7 +3018,7 @@ table.blue tr td {
 table.blue tr.whitebg td {
 	background:#fff;
 	color:#4F5152;
-	font-family:'BlsW-Lt', Arial, sans-serif; 
+	font-family:'BlsW-Lt', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 table.blue.thickborder tr td {
@@ -2907,7 +3037,7 @@ table.blue tr td:last-child {
 table.blue thead tr td {
 	background-color:#00A0C0;
 	color:#fff;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 table.blue tbody tr:last-child td {
@@ -3026,7 +3156,7 @@ ul.bgcolour li span.gold { background-color:#F0AB00; }
 /* @group Figure text: Descriptive text for screen shots, charts and other images. */
 
 .figure {
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 	font-size: 0.85em;
 	line-height: 1.2em;
@@ -3117,7 +3247,7 @@ p.tabs-about-you img.tabs-about-you:last-of-type {
 
 table#synaptic-research-suite-logos {
 	border: none;
-} 
+}
 table#synaptic-research-suite-logos td, table#synaptic-research-suite-logos th {
 	text-align: center;
 	vertical-align: middle;
@@ -3240,7 +3370,7 @@ ol.search-results li div.search-snippet-info {
 }
 ol.search-results li p.search-info {
 	color:#ff5800;
-	font-family:'BlsW-Bd', Arial, sans-serif; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
 }
 #pager-wrapper:after { visibility: hidden; display: block; content: ""; clear: both; height: 0; zoom: 1; }
@@ -3283,7 +3413,7 @@ body.page-instant-chat {
 }
 body.page-instant-chat h3 {
 	color: #fff;
-	
+
 }
 body.page-instant-chat input#btn-submit {
 	border: none;
@@ -3349,7 +3479,7 @@ body.page-instant-chat input#btn-submit {
 .view-display-id-page .views-field-field-company .author-details-text {
 	padding: 7px 20px 0 85px;
 }
-.view-display-id-page .views-field-field-publish-date, .view-display-id-page .views-field-field-date, 
+.view-display-id-page .views-field-field-publish-date, .view-display-id-page .views-field-field-date,
 /* Node */
 .node .field-name-field-date {
 	background-color: #aaa;
@@ -3397,7 +3527,7 @@ body.page-instant-chat input#btn-submit {
 }
 .view-training-videos .views-row .views-field-title {
 	margin-bottom: 0.5em;
-	
+
 }
 .view-training-videos .views-row .views-field-body {
 	float: right;
@@ -3832,7 +3962,7 @@ table.risk-key td.bar table {
 }
 span.risk-key-icon {
 	padding: 0 0 0 45px;
-	
+
 	background-position: left center;
 	background-repeat: no-repeat;
 }
@@ -3879,9 +4009,9 @@ div.risk-table h2 {
 }
 div.risk-table h3.type {
 	font-size: 1.1em;
-	margin: 0.2em 0 0.5em;	
+	margin: 0.2em 0 0.5em;
 }
-/* 
+/*
 div.risk-table .download-link {
 	float: right;
 	display: inline-block;
@@ -4059,8 +4189,8 @@ div.risk-table.vanguard {
 /* Close Brothers - with strapline */
 div.risk-table.close-brothers {
 	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-close-brothers-am.png);
-	padding-top: 30px;
-	/*margin-top: 1.5em;*/
+	padding-top: 25px;
+	margin-top: 0.5em;
 }
 /* MAPS */
 div.risk-table.maps {
@@ -4116,8 +4246,39 @@ div.risk-table.carmignac {
 div.risk-table.russell-investments {
 	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-russell-investments.png);
 	padding-top: 35px;
-	margin-top: 1em;
+	margin-top: 1.5em;
 }
+/* Charles Stanley */
+div.risk-table.charles-stanley {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-charles-stanley.png);
+	padding-top: 45px;
+	margin-top: 1.5em;
+}
+/* Hawksmoor */
+div.risk-table.hawksmoor {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-hawksmoor.png);
+	padding-top: 80px;
+	margin-top: 0.25em;
+}
+/* Thesis */
+div.risk-table.thesis {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-thesis.png);
+	padding-top: 50px;
+	margin-top: 1.25em;
+}
+/* Time */
+div.risk-table.time {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-time.png);
+	padding-top: 80px;
+	margin-top: 0.5em;
+}
+/* SimplyBiz */
+div.risk-table.simplybiz {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-simplybiz.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+
 /* @end */
 
 /* @end */
@@ -4125,7 +4286,7 @@ div.risk-table.russell-investments {
 /* @end */
 
 /* @group Synaptic Guide page with grey boxes */
-/* First of these types of pages (possibly there will only be this one) was Synaptic Guide to Pensions 2015 Q2 */ 
+/* First of these types of pages (possibly there will only be this one) was Synaptic Guide to Pensions 2015 Q2 */
 
 .grey-text-block div.author-wrapper {
 	margin:0.5em 0 0;
@@ -4248,11 +4409,11 @@ body.page-node-72 .node {
 .form-item.webform-component#webform-component-do-you-currently-use-any-software-for-your-business-needs {
 	width:555px;
 }
-#webform-component-what-is-your-preferred-method-of-communication label, 
+#webform-component-what-is-your-preferred-method-of-communication label,
 #webform-component-do-you-currently-use-any-software-for-your-business-needs label {
 	margin-top:10px;
 }
-#webform-component-what-is-your-preferred-method-of-communication .form-radios label.option, 
+#webform-component-what-is-your-preferred-method-of-communication .form-radios label.option,
 #webform-component-do-you-currently-use-any-software-for-your-business-needs .form-radios label.option {
 	float:left;
 	margin:0;
@@ -4590,7 +4751,7 @@ body.page-events .text-description {
 }
 body.page-events .text-description a {
 	color: #00a1c1;
-	font-family:'BlsW-Bd', Arial, sans-serif; font-size-adjust:0.47; font-weight:500; 
+	font-family:'BlsW-Bd', Arial, sans-serif; font-size-adjust:0.47; font-weight:500;
 }
 body.page-events .text-description a:hover,
 body.page-events .text-description a:focus {
@@ -4686,8 +4847,8 @@ body.page-events .views-field-title h2 {
 }
 body.page-events .views-field-field-dates,
 body.page-events .views-field-view-node {
-	font-family:'BlsW-Bd', Arial, sans-serif; 
-	font-weight:normal; 
+	font-family:'BlsW-Bd', Arial, sans-serif;
+	font-weight:normal;
 	font-style:normal;
 }
 body.page-events .views-field-field-dates {
@@ -4843,7 +5004,7 @@ body.front #main-main-banner #block-views-events-block-1 .block-content {
     padding-right: 25px;
     font-family: 'BlsW-Bd', Arial, sans-serif;
     font-weight: normal;
-    font-style: normal;	
+    font-style: normal;
 }
 #block-views-events-block-1 .views-field-view-node a:hover,
 #block-views-events-block-1 .views-field-view-node a:focus {
@@ -4903,7 +5064,7 @@ body.node-type-event .easy-breadcrumb span.easy-breadcrumb_segment-separator:nth
 	box-shadow: none;
 	text-shadow: none;
 	filter:none;
-} 
+}
 #sliding-popup .popup-content #popup-buttons button.find-more-button {
 	display: none;
 }
@@ -4929,7 +5090,7 @@ body.node-type-event .easy-breadcrumb span.easy-breadcrumb_segment-separator:nth
 	padding-bottom: 6px !important;
 }
 body.admin-menu #a2a-custom-menu.fixed {
-	top: 69px;	
+	top: 69px;
 }
 #a2a-custom-menu a > span { border-radius: 0 !important; }
 

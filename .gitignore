@@ -6,6 +6,10 @@ sites/*/*settings*.php
 # sites/*/files #Needed to transfer some new files from Pooks
 sites/*/private
 
+# Pooks: Ignore compressed css & js files
+sites/*/files/css
+sites/*/files/js
+
 # Ignore default text files
 robots.txt
 /CHANGELOG.txt
@@ -42,3 +46,6 @@ xmlrpc.php
 ._.DS_Store
 .DS_Store
 ._
+
+# Pooks: Ignoring some files I use to help with development
+/wysywyg
