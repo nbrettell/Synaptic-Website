@@ -258,7 +258,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	if (opts.width)
 		$cont.width(opts.width);
 	if (opts.height && opts.height != 'auto')
-		$cont.height(opts.height);
+		$cont.height('auto');
 
 	if (opts.startingSlide !== undefined) {
 		opts.startingSlide = parseInt(opts.startingSlide,10);
@@ -297,7 +297,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	var first = opts.startingSlide;
 
 	// set position and zIndex on all the slides
-	$slides.css({position: 'absolute', top:0, left:0}).hide().each(function(i) {
+	$slides.css({position:'absolute', top:0, left:0}).hide().each(function(i) {
 		var z;
 		if (opts.backwards)
 			z = first ? i <= first ? els.length + (i-first) : first-i : els.length-i;
@@ -316,18 +316,18 @@ function buildOptions($cont, $slides, els, options, o) {
 	        if (opts.width)
 	            $slides.width(opts.width);
 	        if (opts.height && opts.height != 'auto')
-	            $slides.height(opts.height);
+	            $slides.height('auto');
 		} else {
 			$slides.each(function(){
 				var $slide = $(this);
 				var ratio = (opts.aspect === true) ? $slide.width()/$slide.height() : opts.aspect;
 				if( opts.width && $slide.width() != opts.width ) {
 					$slide.width( opts.width );
-					$slide.height( opts.width / ratio );
+					$slide.height('auto');
 				}
 
 				if( opts.height && $slide.height() < opts.height ) {
-					$slide.height( opts.height );
+					$slide.height('auto');
 					$slide.width( opts.height * ratio );
 				}
 			});
@@ -359,21 +359,23 @@ function buildOptions($cont, $slides, els, options, o) {
 	}
 		
 	// stretch container
-	var reshape = (opts.containerResize || opts.containerResizeHeight) && $cont.innerHeight() < 1;
+var reshape = (opts.containerResize || opts.containerResizeHeight) && $cont.innerHeight() < 1;
 	if (reshape) { // do this only if container has no size http://tinyurl.com/da2oa9
 		var maxw = 0, maxh = 0;
 		for(var j=0; j < els.length; j++) {
-			var $e = $(els[j]), e = $e[0], w = $e.outerWidth(), h = $e.outerHeight();
+			var $e = $(els[j]), e = $e[0], w = $e.outerWidth(), h = 'auto';
 			if (!w) w = e.offsetWidth || e.width || $e.attr('width');
-			if (!h) h = e.offsetHeight || e.height || $e.attr('height');
+			/*if (!h) h = e.offsetHeight || e.height || $e.attr('height');*/
 			maxw = w > maxw ? w : maxw;
-			maxh = h > maxh ? h : maxh;
+			maxh = 'auto';
 		}
 		if (opts.containerResize && maxw > 0 && maxh > 0)
-			$cont.css({width:maxw+'px',height:maxh+'px'});
+			$cont.css({width:maxw+'px',height:'auto'});
 		if (opts.containerResizeHeight && maxh > 0)
-			$cont.css({height:maxh+'px'});
+			$cont.css({height:'auto'}); 
 	}
+
+
 
 	var pauseFlag = false;  // https://github.com/malsup/cycle/issues/44
 	if (opts.pause)
@@ -397,7 +399,7 @@ function buildOptions($cont, $slides, els, options, o) {
 	$slides.each(function() {
 		// try to get height/width of each slide
 		var $el = $(this);
-		this.cycleH = (opts.fit && opts.height) ? opts.height : ($el.height() || this.offsetHeight || this.height || $el.attr('height') || 0);
+		/*this.cycleH = (opts.fit && opts.height) ? opts.height : ($el.height() || this.offsetHeight || this.height || $el.attr('height') || 0);*/
 		this.cycleW = (opts.fit && opts.width) ? opts.width : ($el.width() || this.offsetWidth || this.width || $el.attr('width') || 0);
 
 		if ( $el.is('img') ) {
@@ -565,7 +567,7 @@ function exposeAddSlide(opts, els) {
 			opts.randomMap.sort(function(a,b) {return Math.random() - 0.5;});
 		}
 
-		$s.css('position','absolute');
+		$s.css('position','relative');
 		$s[prepend?'prependTo':'appendTo'](opts.$cont);
 
 		if (prepend) {
@@ -579,8 +581,8 @@ function exposeAddSlide(opts, els) {
 		if (opts.fit && opts.width)
 			$s.width(opts.width);
 		if (opts.fit && opts.height && opts.height != 'auto')
-			$s.height(opts.height);
-		s.cycleH = (opts.fit && opts.height) ? opts.height : $s.height();
+			$s.height('auto');
+		/*s.cycleH = (opts.fit && opts.height) ? opts.height : $s.height();*/
 		s.cycleW = (opts.fit && opts.width) ? opts.width : $s.width();
 
 		$s.css(opts.cssBefore);
@@ -652,9 +654,9 @@ function go(els, opts, manual, fwd) {
 		changed = true;
 		var fx = opts.fx;
 		// keep trying to get the slide size if we don't have it yet
-		curr.cycleH = curr.cycleH || $(curr).height();
+		curr.cycleH = 'auto';
 		curr.cycleW = curr.cycleW || $(curr).width();
-		next.cycleH = next.cycleH || $(next).height();
+		next.cycleH = 'auto';
 		next.cycleW = next.cycleW || $(next).width();
 
 		// support multiple transition types
@@ -954,7 +956,7 @@ $.fn.cycle.commonReset = function(curr,next,opts,w,h,rev) {
 	if (opts.slideResize && w !== false && next.cycleW > 0)
 		opts.cssBefore.width = next.cycleW;
 	if (opts.slideResize && h !== false && next.cycleH > 0)
-		opts.cssBefore.height = next.cycleH;
+		opts.cssBefore.height = 'auto';
 	opts.cssAfter = opts.cssAfter || {};
 	opts.cssAfter.display = 'none';
 	$(curr).css('zIndex',opts.slideCount + (rev === true ? 1 : 0));
@@ -1019,7 +1021,7 @@ $.fn.cycle.defaults = {
     center:           null,     // set to true to have cycle add top/left margin to each slide (use with width and height options)
     cleartype:        !$.support.opacity,  // true if clearType corrections should be applied (for IE)
     cleartypeNoBg:    false,    // set to true to disable extra cleartype fixing (leave false to force background color setting on slides)
-    containerResize:  1,        // resize container to fit largest slide
+    containerResize:  0,        // resize container to fit largest slide
     containerResizeHeight:  0,  // resize containers height to fit the largest slide but leave the width dynamic
     continuous:       0,        // true to start next transition immediately after current one completes
     cssAfter:         null,     // properties that defined the state of the slide after transitioning out
@@ -1055,7 +1057,7 @@ $.fn.cycle.defaults = {
     shuffle:          null,     // coords for shuffle animation, ex: { top:15, left: 200 }
     skipInitializationCallbacks: false, // set to true to disable the first before/after callback that occurs prior to any transition
     slideExpr:        null,     // expression for selecting slides (if something other than all children is required)
-    slideResize:      1,        // force slide width/height to fixed size before every transition
+    slideResize:      0,        // force slide width/height to fixed size before every transition
     speed:            1000,     // speed of the transition (any valid fx speed value)
     speedIn:          null,     // speed of the 'in' transition
     speedOut:         null,     // speed of the 'out' transition
@@ -1114,7 +1116,7 @@ $.fn.cycle.transitions.fadeout = function($cont, $slides, opts) {
 $.fn.cycle.transitions.scrollUp = function($cont, $slides, opts) {
 	$cont.css('overflow','hidden');
 	opts.before.push($.fn.cycle.commonReset);
-	var h = $cont.height();
+	var h = 'auto';
 	opts.cssBefore.top = h;
 	opts.cssBefore.left = 0;
 	opts.cssFirst.top = 0;
@@ -1124,7 +1126,7 @@ $.fn.cycle.transitions.scrollUp = function($cont, $slides, opts) {
 $.fn.cycle.transitions.scrollDown = function($cont, $slides, opts) {
 	$cont.css('overflow','hidden');
 	opts.before.push($.fn.cycle.commonReset);
-	var h = $cont.height();
+	var h = 'auto';
 	opts.cssFirst.top = 0;
 	opts.cssBefore.top = -h;
 	opts.cssBefore.left = 0;
@@ -1197,7 +1199,7 @@ $.fn.cycle.transitions.slideY = function($cont, $slides, opts) {
 	opts.before.push(function(curr, next, opts) {
 		$(opts.elements).not(curr).hide();
 		$.fn.cycle.commonReset(curr,next,opts,true,false);
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 	});
 	opts.cssBefore.left = 0;
 	opts.cssBefore.top = 0;
@@ -1264,7 +1266,7 @@ $.fn.cycle.transitions.turnUp = function($cont, $slides, opts) {
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,false);
 		opts.cssBefore.top = next.cycleH;
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.width = next.cycleW;
 	});
 	opts.cssFirst.top = 0;
@@ -1276,7 +1278,7 @@ $.fn.cycle.transitions.turnUp = function($cont, $slides, opts) {
 $.fn.cycle.transitions.turnDown = function($cont, $slides, opts) {
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,false);
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.top   = curr.cycleH;
 	});
 	opts.cssFirst.top = 0;
@@ -1313,7 +1315,7 @@ $.fn.cycle.transitions.zoom = function($cont, $slides, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,false,false,true);
 		opts.cssBefore.top = next.cycleH/2;
 		opts.cssBefore.left = next.cycleW/2;
-		$.extend(opts.animIn, { top: 0, left: 0, width: next.cycleW, height: next.cycleH });
+		$.extend(opts.animIn, { top: 0, left: 0, width: next.cycleW, height: 'auto' });
 		$.extend(opts.animOut, { width: 0, height: 0, top: curr.cycleH/2, left: curr.cycleW/2 });
 	});
 	opts.cssFirst.top = 0;
@@ -1328,7 +1330,7 @@ $.fn.cycle.transitions.fadeZoom = function($cont, $slides, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,false,false);
 		opts.cssBefore.left = next.cycleW/2;
 		opts.cssBefore.top = next.cycleH/2;
-		$.extend(opts.animIn, { top: 0, left: 0, width: next.cycleW, height: next.cycleH });
+		$.extend(opts.animIn, { top: 0, left: 0, width: next.cycleW, height: 'auto' });
 	});
 	opts.cssBefore.width = 0;
 	opts.cssBefore.height = 0;
@@ -1350,10 +1352,10 @@ $.fn.cycle.transitions.blindX = function($cont, $slides, opts) {
 };
 // blindY
 $.fn.cycle.transitions.blindY = function($cont, $slides, opts) {
-	var h = $cont.css('overflow','hidden').height();
+	var h = 'auto';
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts);
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.top   = curr.cycleH;
 	});
 	opts.cssBefore.top = h;
@@ -1363,11 +1365,11 @@ $.fn.cycle.transitions.blindY = function($cont, $slides, opts) {
 };
 // blindZ
 $.fn.cycle.transitions.blindZ = function($cont, $slides, opts) {
-	var h = $cont.css('overflow','hidden').height();
+	var h = 'auto';
 	var w = $cont.width();
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts);
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.top   = curr.cycleH;
 	});
 	opts.cssBefore.top = h;
@@ -1396,7 +1398,7 @@ $.fn.cycle.transitions.growY = function($cont, $slides, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,false);
 		opts.cssBefore.top = this.cycleH/2;
 		opts.animIn.top = 0;
-		opts.animIn.height = this.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.top = 0;
 	});
 	opts.cssBefore.height = 0;
@@ -1422,7 +1424,7 @@ $.fn.cycle.transitions.curtainY = function($cont, $slides, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,false,true);
 		opts.cssBefore.top = next.cycleH/2;
 		opts.animIn.top = 0;
-		opts.animIn.height = next.cycleH;
+		opts.animIn.height = 'auto';
 		opts.animOut.top = curr.cycleH/2;
 		opts.animOut.height = 0;
 	});
@@ -1434,7 +1436,7 @@ $.fn.cycle.transitions.curtainY = function($cont, $slides, opts) {
 $.fn.cycle.transitions.cover = function($cont, $slides, opts) {
 	var d = opts.direction || 'left';
 	var w = $cont.css('overflow','hidden').width();
-	var h = $cont.height();
+	var h = 'auto';
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts);
 		opts.cssAfter.display = '';
@@ -1457,7 +1459,7 @@ $.fn.cycle.transitions.cover = function($cont, $slides, opts) {
 $.fn.cycle.transitions.uncover = function($cont, $slides, opts) {
 	var d = opts.direction || 'left';
 	var w = $cont.css('overflow','hidden').width();
-	var h = $cont.height();
+	var h = 'auto';
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,true,true);
 		if (d == 'right')
@@ -1478,7 +1480,7 @@ $.fn.cycle.transitions.uncover = function($cont, $slides, opts) {
 // toss - move top slide and fade away
 $.fn.cycle.transitions.toss = function($cont, $slides, opts) {
 	var w = $cont.css('overflow','visible').width();
-	var h = $cont.height();
+	var h = 'auto';
 	opts.before.push(function(curr, next, opts) {
 		$.fn.cycle.commonReset(curr,next,opts,true,true,true);
 		// provide default toss settings if animOut not provided
@@ -1495,7 +1497,7 @@ $.fn.cycle.transitions.toss = function($cont, $slides, opts) {
 // wipe - clip animation
 $.fn.cycle.transitions.wipe = function($cont, $slides, opts) {
 	var w = $cont.css('overflow','hidden').width();
-	var h = $cont.height();
+	var h = 'auto';
 	opts.cssBefore = opts.cssBefore || {};
 	var clip;
 	if (opts.clip) {

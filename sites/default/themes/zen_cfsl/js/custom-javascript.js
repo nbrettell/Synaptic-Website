@@ -44,3 +44,8 @@ jQuery(window).resize(function() {
             jQuery("#main-main-banner .region-sidebar-first .block-menu-block ul.menu").hide()
      }
 });
+
+
+$(window).on('load', function() {
+  jQuery("#views_slideshow_cycle_teaser_section_front_page_slideshow-block").prepend("<img src='http://www.synaptic.co.uk/sites/default/files/homeslide-d2c.jpg' style='visibility:hidden;' width='644' height='300'>");
+});
