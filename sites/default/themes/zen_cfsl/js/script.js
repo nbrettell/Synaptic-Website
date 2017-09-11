@@ -347,24 +347,24 @@ Drupal.behaviors.my_custom_behavior = {
 
 	// Fixing AddToAny menu 
 
-  var fixA2aPosition = function() {
-  	var a2aMenu = $('#a2a-custom-menu');
-  	//var a2aMenuPosition = a2aMenu.offset();
-  	var windowPosition = $(window).scrollTop();
-  	//console.log('Top Position: ' + a2aMenuPosition.top);
-  	//console.log('Window Position: ' + windowPosition);
+	var fixA2aPosition = function() {
+		var a2aMenu = $('#a2a-custom-menu');
+		//var a2aMenuPosition = a2aMenu.offset();
+		var windowPosition = $(window).scrollTop();
+		//console.log('Top Position: ' + a2aMenuPosition.top);
+		//console.log('Window Position: ' + windowPosition);
 
-  	if (windowPosition >= 166) {
-   		$(a2aMenu).addClass('fixed');
-   		//console.log('Class Added');
-  	} else {
-  		$(a2aMenu).removeClass('fixed');
-  	}
+		if (windowPosition >= 166) {
+			$(a2aMenu).addClass('fixed');
+			//console.log('Class Added');
+		} else {
+			$(a2aMenu).removeClass('fixed');
+		}
 
 	};
 	    
-  $(window).scroll(fixA2aPosition);
-  fixA2aPosition();
+	$(window).scroll(fixA2aPosition);
+	fixA2aPosition();
 
   
 
@@ -408,12 +408,15 @@ Drupal.behaviors.my_custom_behavior = {
 		
 	// }
 
-
+  	// Match height of front page 3 column blocks
+	if ($('body.front .width-3col').length) {
+		$('#main-main-banner .width-3col').matchHeight();
+	}
 
   }
 
-
 };
+
 
 
 

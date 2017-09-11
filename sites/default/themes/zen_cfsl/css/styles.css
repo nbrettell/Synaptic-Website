@@ -281,6 +281,11 @@ div.field-name-field-publish-date {
 	width: 727px;
 	margin: 1em 0 1.5em;
 }
+/* .col2width.lightblue-border {
+	padding: 0 1em;
+	border:3px solid #00A0C0;
+	margin-top:2em;
+}  */
 
 /* @end */
 
@@ -2571,50 +2576,50 @@ body.page-node-1044 .field-name-field-author {
 }
 
 /** Article: Henderson Rowe: Verbatim Asset Management: The good, the bad and the ugly **/
-body.page-node-1048 .white-dropshadow-text-box div.table {
+.intelliflo-synaptic-suite-logo-table div.table {
 	display: table;
 	margin:2em 0 0;
 }
-body.page-node-1048 .white-dropshadow-text-box div.table .row {
+.intelliflo-synaptic-suite-logo-table div.table .row {
 	display: table-row;
 	margin:0;
 }
-body.page-node-1048 .white-dropshadow-text-box div.table .row > div {
+.intelliflo-synaptic-suite-logo-table div.table .row > div {
 	display: table-cell;
 	vertical-align: middle;
 	padding-bottom:2em;
 }
-body.page-node-1048 .white-dropshadow-text-box div.table .row .logo {
+.intelliflo-synaptic-suite-logo-table div.table .row .logo {
 	width: 30%;
 }
-body.page-node-1048 .white-dropshadow-text-box .logo img {
+.intelliflo-synaptic-suite-logo-table .logo img {
 	border:none;
 	box-shadow: none;
 	height: auto;
 	width: 100%;
 	margin:0;
 }
-body.page-node-1048 .white-dropshadow-text-box .info {
+.intelliflo-synaptic-suite-logo-table .info {
 	padding-left:1em;
 }
 
 @media (max-width: 767px) {
-	body.page-node-1048 .white-dropshadow-text-box div.table {
+	.intelliflo-synaptic-suite-logo-table div.table {
 		display: block;
 	}
-	body.page-node-1048 .white-dropshadow-text-box div.table .row {
+	.intelliflo-synaptic-suite-logo-table div.table .row {
 		display: block;
 		padding-bottom: 1em;
 	}
-	body.page-node-1048 .white-dropshadow-text-box div.table .row > div {
+	.intelliflo-synaptic-suite-logo-table div.table .row > div {
 		display: block;
 		vertical-align: middle;
 		padding-bottom:1em;
 	}
-	body.page-node-1048 .white-dropshadow-text-box div.table .row .logo {
+	.intelliflo-synaptic-suite-logo-table div.table .row .logo {
 		width: 230px;
 	}
-	body.page-node-1048 .white-dropshadow-text-box .info {
+	.intelliflo-synaptic-suite-logo-table .info {
 		padding-left:0;
 	}
 }
@@ -2654,6 +2659,42 @@ body.page-node-1062 .field-name-field-author {
 body.page-node-1064 .field-name-field-author {
 	display: none;
 }
+
+/* @end */
+
+/* @group 2017 Q3 */
+
+/** Article: Getting ready for ‘Appropriate Pension Transfer Analysis’ **/
+/* Removing name from menu Views blocks */
+#block-views-1f50972902e5b403d140db37b92d3f79 .views-row-2 .name,
+#block-views-89e714c81055a5c15dc016ab3c63ba54 .views-row-2 .name {
+	display: none;
+}
+
+/** Article: Conquering Risk: Do you know your Attitude to Risk from your Capacity for Loss? **/
+/* Removing name from menu Views blocks */
+#block-views-1f50972902e5b403d140db37b92d3f79 .views-row-6 .name,
+#block-views-89e714c81055a5c15dc016ab3c63ba54 .views-row-6 .name {
+	display: none;
+}
+
+/** Article: Synaptic Risk Rating Table **/
+/* Hiding author entity reference */
+body.page-node-1137 .field-name-field-author {
+	display: none;
+}
+/* Removing name from menu Views blocks */
+#block-views-1f50972902e5b403d140db37b92d3f79 .views-row-7 .name,
+#block-views-89e714c81055a5c15dc016ab3c63ba54 .views-row-7 .name {
+	display: none;
+}
+
+/** Article: Cover Me Now Protection Portal... **/
+/* Hiding author entity reference */
+body.page-node-1161 .field-name-field-author {
+	display: none;
+}
+
 
 /* @end */
 
@@ -2751,6 +2792,21 @@ body.page-node-1064 .field-name-field-author {
 
 /*** Text styling ***/
 
+/* @group Subtitle */
+
+.field-name-field-subtitle h2 {
+	font-size: 1.8em;
+	line-height: 1.2em;
+	margin-top: -0.75em;
+	margin-bottom: 1em;
+	font-family: 'BlsW-Lt', Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	color: #03466E;
+}
+
+/* @end */
+
 /* @group Lead paragraph */
 
 p.leadpara {
@@ -2799,6 +2855,29 @@ blockquote p.author {
 div.field-name-field-article-details *, div.grey-text-block *, blockquote * {
 	margin-top: 0;
 }
+/* @end */
+
+/* @group Coloured border box */
+
+div.borderbox {
+	padding: 1em 1em 1.5em;
+	border-width: 3px;
+	border-style: solid;
+	margin:2em 0;
+}
+div.borderbox > *:first-child {
+	margin-top:0;
+}
+div.borderbox > *:last-child {
+	margin-bottom:0;
+}
+div.borderbox.lightblue {
+	border-color:#00A0C0; 
+}
+div.borderbox.purple {
+	border-color:rgb(79,45,130); 
+}
+
 /* @end */
 
 /* @group White text box with dropshadow */
@@ -4275,6 +4354,30 @@ div.risk-table.time {
 /* SimplyBiz */
 div.risk-table.simplybiz {
 	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-simplybiz.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+/* Aviva Investors */
+div.risk-table.aviva {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-aviva-investors.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+/* LV= */
+div.risk-table.lv {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-lv.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+/* Old Mutual */
+div.risk-table.old-mutual {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-old-mutual-global-investors.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+/* Scottish Widows */
+div.risk-table.scottish-widows {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-scottish-widows.png);
 	padding-top: 35px;
 	margin-top: 1.5em;
 }
