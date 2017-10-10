@@ -289,6 +289,29 @@ div.field-name-field-publish-date {
 
 /* @end */
 
+/* @group Colorbox magnifying glass icon */
+
+a.colorbox {
+	position: relative;
+	display: block;
+}
+
+a.colorbox div.ico-magnify {
+	background-image: url('../images/ico-magnify-lightblue.svg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	right: 1em;
+	bottom: 2em;
+}
+a.colorbox:hover div.ico-magnify {
+	background-image: url('../images/ico-magnify-lightblue_hover.svg');
+}
+
+/* @end */
+
 /* @group Image borders and drop shadows */
 
 .content-main img {
@@ -2872,10 +2895,10 @@ div.borderbox > *:last-child {
 	margin-bottom:0;
 }
 div.borderbox.lightblue {
-	border-color:#00A0C0; 
+	border-color:#00A0C0;
 }
 div.borderbox.purple {
-	border-color:rgb(79,45,130); 
+	border-color:rgb(79,45,130);
 }
 
 /* @end */

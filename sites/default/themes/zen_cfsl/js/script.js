@@ -37,9 +37,9 @@ Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
 
     // Place your code here.
-		
-		// Front page slideshow pager background colours 
-		
+
+		// Front page slideshow pager background colours
+
 		function whichCapitaColour(capitaColour) {
 			if (capitaColour === 'Light Blue') {
 				return 'light-blue';
@@ -69,30 +69,30 @@ Drupal.behaviors.my_custom_behavior = {
 				return;
 			}
 		}
-		
+
 		$('#block-views-front-page-slideshow-block .views-slideshow-cycle-main-frame-row').each(function(i) {
 //		    var slideId = this.id;
 //		    var slideNumber = slideId.substr(slideId.length - 1);
 //		    slideNumber = parseInt(slideNumber);
 		    var capitaColour = $(this).find('.views-field-field-capita-colour .field-content').text();
 		    var colourClass = whichCapitaColour(capitaColour);
-		    		    
+
 		    $('#block-views-front-page-slideshow-block .views-slideshow-pager-field-item').each(function(j) {
 //		        var pagerId = this.id;
 //		        var pagerNumber = pagerId.substr(pagerId.length - 1);
 //		        pagerNumber = parseInt(pagerNumber);
-				
+
 		        if (i === j){
 		        	$(this).addClass(colourClass);
 		        }
 		    });
 		});
-		
-		
+
+
 		// Adding hash tag to training block morelink in product section for /support/training page info dropdowns
-		
-		var pathname = window.location.pathname; 
-		
+
+		var pathname = window.location.pathname;
+
 		if(pathname.indexOf('/research-tools/synaptic-product-and-fund') > -1){
 			$('#block-block-53 a.morelink').attr('href', $('#block-block-53 a.morelink').attr('href') + '#product-and-fund');
 		}
@@ -111,9 +111,9 @@ Drupal.behaviors.my_custom_behavior = {
 		if(pathname.indexOf('/research-tools/synaptic-illustrator') > -1){
 			$('#block-block-53 a.morelink').attr('href', $('#block-block-53 a.morelink').attr('href') + '#illustrator');
 		}
-		
-		// /support/training page info dropdowns 
-		
+
+		// /support/training page info dropdowns
+
 		// If the URL has a hash tag display appropriate dropdown
 		if ($('body.page-node-63').length > 0) {
 			if (window.location.hash == '#product-and-fund') {
@@ -166,10 +166,10 @@ Drupal.behaviors.my_custom_behavior = {
 			$('#block-block-22').css( 'display', 'block' );
 			$('#block-block-22').siblings().css( 'display', 'none' );
 		});
-				
-		
+
+
 		// Knowledgebase iframe URL stuff
-		
+
 		if ($('body.page-node-65').length > 0) {
 			var url='kb.capitafinancialsoftware.co.uk';
 			var frameUrl= queryString("frame");
@@ -179,23 +179,23 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 
 		// Quick links block - Add target="_blank" attribute for external links
-		
+
 		$('#block-views-quick-links-block .linktype-87').parent('a').attr('target','_blank');
-		
+
 		// Twitter Feed block - Add target="_blank" attribute to 'more' link
-		
+
 		$('#block-views-tweets-block .more-link a').attr('target','_blank');
-		
-		
-		// Training video page logo anchor links 
-		
+
+
+		// Training video page logo anchor links
+
 		// Whether .view-header should be shown
 		if ($('#block-menu-block-4 li.menu-mlid-734 li').length) {
 			$('.view-training-videos .view-header').css( 'display', 'block' );
-		} 
-		
+		}
+
 		// Logos
-		
+
 		// Synaptic Suite
 		if ($('#block-menu-block-4 li.menu-mlid-1581').length) {
 			$('a.logo-synaptic-suite').css( 'display', 'inline-block' );
@@ -233,17 +233,17 @@ Drupal.behaviors.my_custom_behavior = {
 			$('a.logo-cover-me-now ').css( 'display', 'inline-block' );
 		}
 
-		
+
 		// Quick fix for Entity Reference module bug (https://www.drupal.org/node/2012250): Hides Author details for 'Anonymous' author
-		
+
 		var strAnon = $('div.field-name-field-author h2.node-title').text();
-		
+
 		if (strAnon.indexOf('Anonymous') >= 0) {
 			$('div.field-name-field-author').css( 'display', 'none' );
 		}
-		
+
 		// Previous Connection issues & subscription tabs
-		
+
 		$('#block-block-67 .tab.sub-form, #block-views-5af7c61a64894bca563354129b4c963a a#mag-signup-link').click(function() {
 			$('#block-views-5af7c61a64894bca563354129b4c963a').css( 'display', 'none' );
 			$('#block-block-67 .tab.connection-issues').addClass( 'tab-off' );
@@ -256,10 +256,10 @@ Drupal.behaviors.my_custom_behavior = {
 			$('#block-webform-client-block-121').css( 'display', 'none' );
 			$('#block-block-67 .tab.sub-form').addClass( 'tab-off' );
 		});
-		
-		
+
+
 		// If there's a '#subscription-form' hash tag in the URL
-		
+
 		if ($('#block-block-67').length > 0) {
 			if (window.location.hash == '#subscription-form') {
 				$('#block-views-5af7c61a64894bca563354129b4c963a').css( 'display', 'none' );
@@ -268,13 +268,13 @@ Drupal.behaviors.my_custom_behavior = {
 				$('#block-block-67 .tab.sub-form').removeClass( 'tab-off' );
 			}
 		}
-		
-	
+
+
 
 	$(window).load(function(){ /* The below code needs to be in .load() for the .outerHeight()s to return correct values. See: http://stackoverflow.com/questions/10268892/outerheighttrue-gives-wrong-value */
-	
+
 		// Research & Opinions page: Setting the height of the current Connection magazine block so that it matches the height of the longest of the other two columns
-		
+
 		var setConnectionMagBlockHeightRO = function() {
 			var viewContent = $('#content .block-views.connection-articles .view-content');
 			var firstColumnHeight = $('.region-sidebar-first').outerHeight();
@@ -289,7 +289,7 @@ Drupal.behaviors.my_custom_behavior = {
 			var viewHeader = $('#content .block-views.connection-articles .view-header').outerHeight();
 			var viewHeaderHeight = connectionBlockHeight - viewContentHeight;
 			//var viewHeaderHeight = 197;
-			
+
 			if (firstColumnHeight > secondColumnHeight) {
 				lastBlock = $('.region-sidebar-first .block:last-child');
 				margin = ($(lastBlock).outerHeight(true)) - ($(lastBlock).outerHeight());
@@ -309,13 +309,13 @@ Drupal.behaviors.my_custom_behavior = {
 			// console.log('View Content Height: ' + viewContentHeight);
 			// console.log('Set View Content Height: ' + setViewContentHeight);
 		};
-			
+
 		if ($('body.page-node-244').length) {
 			setConnectionMagBlockHeightRO();
 		}
-		
+
 		// Setting height of Connection menu on article pages if menu is longer than content area
-		
+
 		var setConnectionMagBlockHeight = function() {
 			//var $contentLastElement = $('.node-connection-magazine-article > div:last-child');
 			var contentHeight = $('.content-main').outerHeight()/* - ($($contentLastElement).outerHeight(true) - $($contentLastElement).outerHeight())*/;
@@ -323,29 +323,29 @@ Drupal.behaviors.my_custom_behavior = {
 			var viewHeaderHeight = $('.block-views.connection-articles .view-header').outerHeight();
 			//var viewHeaderHeightAlt = $('.block-views.connection-articles').outerHeight() - $('.block-views.connection-articles .view-content').outerHeight();
 			//var viewContentHeight = $('.block-views.connection-articles .view-content').outerHeight();
-			
-			if (blockHeight > contentHeight) {			
+
+			if (blockHeight > contentHeight) {
 				var setHeight = contentHeight - viewHeaderHeight;
 				$('.block-views.connection-articles .view-content').css('height', setHeight);
 			}
-						
+
 //			console.log('Content height: ' + contentHeight);
 //			console.log('View Header height: ' + viewHeaderHeight);
 //			console.log('View Header height Alternate: ' + viewHeaderHeightAlt);
 //			console.log('Set height: ' + setHeight);
 		};
-		
+
 		if ($('body.node-type-connection-magazine-article').length) {
 			//setTimeout(function(){
 				setConnectionMagBlockHeight();
 			//}, 1000);
 		}
 
-		
-	});
-	
 
-	// Fixing AddToAny menu 
+	});
+
+
+	// Fixing AddToAny menu
 
 	var fixA2aPosition = function() {
 		var a2aMenu = $('#a2a-custom-menu');
@@ -362,19 +362,19 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 
 	};
-	    
+
 	$(window).scroll(fixA2aPosition);
 	fixA2aPosition();
 
-  
+
 
 
   // Adding anchor links to reference superscripts in articles to link to smallprint at bottom
 
   $('.node-connection-magazine-article .field-name-field-small-print, .node-synaptic-guides-article .field-name-field-small-print').attr('id', 'smallprint');
   $('.node-connection-magazine-article sup, .node-synaptic-guides-article sup').not('.node-connection-magazine-article div.field-name-field-small-print sup, .node-synaptic-guides-article div.field-name-field-small-print sup').wrap('<a class="sup-ref" href="#smallprint"></a>');
-  
-  
+
+
 
   // Research Tools page: Table: 'The Synaptic Research and Back Office automation suite.'
   // Making tr th height consistent across both th rows
@@ -391,27 +391,32 @@ Drupal.behaviors.my_custom_behavior = {
 
 	// Move the block down to below the first pullquote
 	// if (jQuery('body.node-type-connection-magazine-article').length && jQuery('.region-sidebar-second .block.below-pullquote').length) {
-		
+
 	// 	//jQuery('.region-sidebar-second .block img').css('border', '3px solid red');
-		
-	// 	setTimeout(function(){ 
+
+	// 	setTimeout(function(){
 	// 		var $blockToMoveDown = jQuery('.region-sidebar-second .block.below-pullquote').first();
 	// 		move_block_to_below_1st_pullquote($blockToMoveDown);
 	// 	}, 2000);
-		
+
 
 	// 	// jQuery('.region-sidebar-second .block img').load(function() {
 	// 	// 	console.log('Why?');
 	// 	// 	var $blockToMoveDown = jQuery('.region-sidebar-second .block.below-pullquote').first();
 	// 	// 	move_block_to_below_1st_pullquote($blockToMoveDown);
 	// 	// });
-		
+
 	// }
 
   	// Match height of front page 3 column blocks
 	if ($('body.front .width-3col').length) {
 		$('#main-main-banner .width-3col').matchHeight();
 	}
+
+	if ($('a.colorbox').length && !$('a.colorbox div.ico-magnify').length) {
+		$('a.colorbox img').after('<div class="ico-magnify">');
+	}
+
 
   }
 
