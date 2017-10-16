@@ -230,7 +230,11 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 		// Cover Me Now
 		if ($('#block-menu-block-4 li.menu-mlid-1584').length) {
-			$('a.logo-cover-me-now ').css( 'display', 'inline-block' );
+			$('a.logo-cover-me-now').css( 'display', 'inline-block' );
+		}
+		// Analyser
+		if ($('#block-menu-block-4 li.menu-mlid-1901').length) {
+			$('a.logo-analyser').css( 'display', 'inline-block' );
 		}
 
 
@@ -417,12 +421,30 @@ Drupal.behaviors.my_custom_behavior = {
 		$('a.colorbox img').after('<div class="ico-magnify">');
 	}
 
+	// Product slideshow
+	function set_height_of_screenshot_slideshow() {
+		var $slideshow = $('.screenshot-slideshow'),
+			$img = $slideshow.find('.views-field-field-image img'),
+			maxHeight = 0;
+			
+			$img.each(function() {
+				if ($(this).height() > maxHeight) {
+					maxHeight = $(this).height();
+				}
+			})
+
+		$slideshow.height(maxHeight + 50);
+		// console.log(maxHeight);
+	}
+	if (jQuery('.screenshot-slideshow').length) {
+		set_height_of_screenshot_slideshow();
+		jQuery(window).resize(set_height_of_screenshot_slideshow);
+	}
+
 
   }
 
 };
-
-
 
 
 })(jQuery, Drupal, this, this.document);

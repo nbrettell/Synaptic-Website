@@ -143,6 +143,14 @@
       <?php print render($page['content_bottom']); ?>
       
     </div>
+
+  <script>
+    // Research Tools product screeshot slideshow resizing
+    // if (jQuery('.screenshot-slideshow').length) {
+    //   set_height_of_screenshot_slideshow();
+    //   jQuery(window).resize(set_height_of_screenshot_slideshow);
+    // }
+  </script>
 	
   <?php
       // Render the sidebars to see if there's anything in them.
@@ -158,7 +166,7 @@
     <?php endif; ?>
     
   </div><!-- /#main -->
-  
+
   <script>
     // Move the block down to below the first pullquote
 	  // if (jQuery('body.node-type-connection-magazine-article').length && jQuery('.region-sidebar-second .block.below-pullquote').length) {
@@ -171,6 +179,11 @@
       if (!jQuery('.field-name-field-about-block-title').length) {
         jQuery('.field-name-field-about-block-body').addClass('notitle');
       }
+    }
+
+    // Adding New flash icon graphic to Synaptic Analyser menu item
+    if (jQuery('#block-menu-block-1').length) {
+      jQuery('#block-menu-block-1 .menu-mlid-1898 a').append('<span class="new-flash">New</span>');
     }
 
   </script>
