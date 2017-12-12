@@ -163,7 +163,7 @@ ol.bold li {
 	padding-left:24px;
 	font-family:'BlsW-Bd', Arial, sans-serif;
 	font-weight:normal; font-style:normal;
-	vertical-align:middle;
+	/* vertical-align:middle; */
 	line-height:1em;
 }
 
@@ -223,10 +223,10 @@ div.field-name-field-author {
 }
 
 div.field-name-field-author .node-article-author {
-	padding: 7px 5px 0 85px;
+	padding: 7px 5px 10px 85px;
 	position: relative;
 	background-color: #F2F2F2;
-	height: 74px;
+	min-height: 74px;
 	overflow: hidden;
 	margin-bottom: 0.5em;
 }
@@ -286,6 +286,9 @@ div.field-name-field-publish-date {
 	border:3px solid #00A0C0;
 	margin-top:2em;
 }  */
+.col1width {
+	margin: 1em 0 1.5em;
+}
 
 /* @end */
 
@@ -530,7 +533,7 @@ body.node-type-training-video #navigation ul.links li.menu-395 a
 /* Secondary menu block */
 #block-menu-block-2, .menu-block-2 {
 	float:right;
-	display:inline-block;
+	/* display:inline-block; */
 	clear: both;
 }
 #block-menu-block-2 {
@@ -576,7 +579,7 @@ body.section-provider-solutions .menu-block-2 ul.menu li.menu-mlid-514 a,
 
 #block-block-48 {
 	float: right;
-	display: inline-block;
+	/* display: inline-block; */
 	clear: both;
 	margin: 10px 0 0;
 }
@@ -955,9 +958,9 @@ body.section-provider-solutions .menu-block-2 ul.menu li.menu-mlid-514 a,
 	line-height:1em;
 }
 /* Move block down to below the first pullquote (gets .show() with JS) */
-.block.below-pullquote {
-	/*display:none;*/
-}
+/* .block.below-pullquote {
+	display:none;
+} */
 #block-block-104 {
 	margin-top:328px;
 }
@@ -1946,8 +1949,8 @@ body.page-node-63 .node, body.page-node-63 .content-main {
 	bottom: auto;
 	left: auto;
 }
-#main .block.address a.googlemaps:hover {
-}
+/* #main .block.address a.googlemaps:hover {
+} */
 
 /* @end */
 
@@ -2107,7 +2110,7 @@ body #main-main-banner #sitemap .block .block-content {
 }
 #footer .block {
 	float:left;
-	display:inline-block;
+	/* display:inline-block; */
 	margin:0;
 }
 #footer #block-block-3 {
@@ -2304,8 +2307,8 @@ body #main-main-banner .block.connection-articles h2.block-title {
 body #main-main-banner .block.connection-articles .block-content {
 	padding: 0 !important;
 }
-body #main-main-banner .block.connection-articles h2.block-title {
-}
+/* body #main-main-banner .block.connection-articles h2.block-title {
+} */
 body #main-main-banner .block.connection-articles .block-content .view-content {
 	padding: 16px 14px 0;
 	box-sizing: border-box;
@@ -2532,7 +2535,7 @@ body #main-main-banner #block-views-5af7c61a64894bca563354129b4c963a .view-conte
 	border-collapse: separate;
 }
 #block-views-5af7c61a64894bca563354129b4c963a table.views-view-grid td .cover {
-	display: inline-block;
+	/* display: inline-block; */
 	float: left;
 }
 #block-views-5af7c61a64894bca563354129b4c963a table.views-view-grid td .cover img {
@@ -2784,7 +2787,7 @@ body.page-node-1044 .field-name-field-author {
 	}
 	.intelliflo-synaptic-suite-logo-table div.table .row > div {
 		display: block;
-		vertical-align: middle;
+		/* vertical-align: middle; */
 		padding-bottom:1em;
 	}
 	.intelliflo-synaptic-suite-logo-table div.table .row .logo {
@@ -2866,6 +2869,44 @@ body.page-node-1161 .field-name-field-author {
 	display: none;
 }
 
+/* @end */
+
+/* @group 2017 Q4 */
+
+/** Rathbones: Are you, your clients and your DFM partner MiFID-ready? **/
+/* Blue highlight text */
+body.page-node-1283 .node-connection-magazine-article p.blue {
+	color: #03466E;
+	font-family:'BlsW-Rg', Arial, sans-serif;
+}
+
+/** Article: Synaptic Risk Rating Table **/
+/* Hiding author entity reference */
+body.page-node-1309 .field-name-field-author {
+	display: none;
+}
+/* Removing name from menu Views blocks */
+#block-views-a6054b0d1b335195e5d8ec99bf9501aa .views-row-23 .name,
+#block-views-d4f8960383066d95b8c5e2cbeaae0069 .views-row-23 .name {
+	display: none;
+}
+
+/** Article: LV=: Adding certainty to retirement outcomes **/
+
+.node-1306 div.field-name-field-author div.field-name-field-portrait-photo {
+	height: 100%;
+	width: auto;
+}
+.node-1306 div.field-name-field-author div.field-name-field-portrait-photo div {
+	height: 100%;
+}
+.content-main .node-1306 div.field-name-field-author div.field-name-field-portrait-photo img {
+	height: 93.8px !important;
+	width: 93.8px !important;
+}
+.node-1306 div.field-name-field-author .node-article-author {
+	padding-left: 105px;
+}
 
 /* @end */
 
@@ -2906,7 +2947,7 @@ body.page-node-1161 .field-name-field-author {
 	float: left;
 	background: #F2F2F2;
 	margin: 1em 0 0 3em;
-	display: inline-block;
+	/* display: inline-block; */
 	padding-right: 2em;
 }
 /* Cearfix Hack */
@@ -3415,8 +3456,10 @@ ul.bgcolour li span.gold { background-color:#F0AB00; }
 	margin: 3em 0 -1em;
 }
 .figure.below {
-	margin: -1.5em 0 3em;
+	/* margin: -1.5em 0 3em; */
+	margin: -0.25em 0 2.5em;
 }
+
 
 /* @group Other block – 'In addition to... products'  */
 
@@ -3447,7 +3490,10 @@ div.gfxbanner img {
 /* @group Superscript anchor links to smallprint references at bottom of article */
 
 a.sup-ref {
-	/*text-decoration: none;*/
+	text-decoration: none;
+}
+p.leadpara a.sup-ref {
+	color: #00A0C0;
 }
 
 /* @end */
@@ -3485,7 +3531,7 @@ p.tabs-about-you img.tabs-about-you {
 	border:0;
 	-moz-box-shadow: none;
     box-shadow: none;
-    display: inline-block;
+    /* display: inline-block; */
     float:left;
     margin-right: 6px;
 }
@@ -4386,15 +4432,15 @@ div.risk-table.tavistock {
 }
 /* Santander */
 div.risk-table.santander {
-	/*background-image: url(../images/synaptic-risk-rating/provider-logos/logo-santander.png);*/
-	padding-top: 10px;
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-santander.png);
+	padding-top: 45px;
 	margin-top: 1.5em;
 }
-div.risk-table.santander h2 {
+/* div.risk-table.santander h2 {
 	display: inline-block;
 	float: left;
 	margin:-8px 0 0;
-}
+} */
 /* Sanlam Private Wealth */
 /*div.risk-table.sanlam {*/
 	/*background-image: url(../images/synaptic-risk-rating/provider-logos/logo-sanlam-private-wealth.png);*/
@@ -4557,6 +4603,42 @@ div.risk-table.scottish-widows {
 	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-scottish-widows.png);
 	padding-top: 35px;
 	margin-top: 1.5em;
+}
+/* Architas */
+div.risk-table.architas {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-architas.png);
+	padding-top: 45px;
+	margin-top: 1.5em;
+}
+/* BNY Mellon */
+div.risk-table.bny-mellon {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-bny-mellon.png);
+	padding-top: 80px;
+	/* margin-top: 0.25em; */
+}
+/* Invesco Perpetual */
+div.risk-table.invesco {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-invesco-perpetual.png);
+	padding-top: 80px;
+	/* margin-top: 0.25em; */
+}
+/* Janus Henderson */
+div.risk-table.janus-henderson {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-janus-henderson.png);
+	padding-top: 35px;
+	margin-top: 1.5em;
+}
+/* Liontrust */
+div.risk-table.liontrust {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-liontrust.png);
+	padding-top: 35px;
+	margin-top: 1em;
+}
+/* Standard Life */
+div.risk-table.standard-life {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-standard-life.png);
+	padding-top: 55px;
+	margin-top: 0.5em;
 }
 
 /* @end */
@@ -5279,6 +5361,9 @@ body.front #main-main-banner #block-views-events-block-1 .block-content {
 	margin-top:0.5em;
 	margin-bottom: 0.75em;
 }
+#block-views-events-block-1 .views-field-body {
+	min-height: 95px;
+}
 #block-views-events-block-1 .views-field-view-node {
 	margin-top:1em;
 	margin-bottom: 4px;
@@ -5294,6 +5379,18 @@ body.front #main-main-banner #block-views-events-block-1 .block-content {
 #block-views-events-block-1 .views-field-view-node a:hover,
 #block-views-events-block-1 .views-field-view-node a:focus {
 	color: #03466E;
+}
+
+@media (max-width:690px) {
+
+	#block-views-events-block-1 .views-row-2 {
+		padding-left: 0;
+		border-left: none;
+	}
+	#block-views-events-block-1 .views-field-body {
+		min-height: 0;
+	}
+
 }
 
 /*** Hiding second 'Events' in breadcrumb due to events date in URL alias ***/
