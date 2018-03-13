@@ -211,10 +211,10 @@
  * @endcode
  */
 /* Synpatic Software */
-$databases = array (
-  'default' => 
+/* $databases = array (
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
       'database' => 'synapticsoftware-production',
       'username' => 'websiteuser_prod',
@@ -225,29 +225,29 @@ $databases = array (
       'prefix' => '',
     ),
   ),
-);
+); */
 
 /* Chris Pook */
-/* $databases = array (
-  'default' => 
+$databases = array (
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
-      'database' => 'synaptic_connection-2016-q2',
+      'database' => 'synaptic_connection-2018-q1',
       'username' => 'cfsl',
       'password' => 'aqPhQB6qCzrsnFCW',
-      'host' => 'localhost',
+      'host' => '127.0.0.1',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
     ),
   ),
-); */
+);
 
 /* Used for mixed mode http + https */
 #$conf['https'] = TRUE;
 
-$conf['file_temporary_path'] = 'C:\inetpub\temp\drupal';
+# $conf['file_temporary_path'] = 'C:\inetpub\temp\drupal';
 
 
 /**
@@ -588,10 +588,10 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  *
  * Remove the leading hash signs to disable.
  */
- 
+
 # $conf['allow_authorize_operations'] = FALSE;
 
-$_SERVER['HTTPS'] = 'On';
+# $_SERVER['HTTPS'] = 'On';
 
-$base_url = 'https://www.synaptic.co.uk';
-$conf['https'] = TRUE;
+# $base_url = 'https://www.synaptic.co.uk';
+# $conf['https'] = TRUE;

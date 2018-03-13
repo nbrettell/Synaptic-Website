@@ -2910,6 +2910,38 @@ body.page-node-1309 .field-name-field-author {
 
 /* @end */
 
+/* @group 2018 Q1 */
+
+/** Article: Synaptic Risk Rating Table **/
+/* Hiding author entity reference */
+body.page-node-1371 .field-name-field-author {
+	display: none;
+}
+/* Removing name from menu Views blocks */
+#block-views-ebaaa8b0068f8dea5c38a355d182f064 .views-row-21 .name,
+#block-views-c9b0ec514e33d5b299ddeff1ab754791 .views-row-21 .name {
+	display: none;
+}
+
+/** Article: Synaptic Comparator: On and off platform provider illustrations **/
+/* Hiding author entity reference */
+body.page-node-1351 .field-name-field-author {
+	display: none;
+}
+/* Removing name from menu Views blocks */
+#block-views-ebaaa8b0068f8dea5c38a355d182f064 .views-row-6 .name,
+#block-views-c9b0ec514e33d5b299ddeff1ab754791 .views-row-6 .name {
+	display: none;
+}
+
+/** Article: Synaptic Analyser: Cashflow is king **/
+/* Hiding author entity reference */
+body.page-node-1368 .field-name-field-author {
+	display: none;
+}
+
+/* @end */
+
 /* @end */
 
 /* @group Connection mag – Spotlight block – Region: Content */
@@ -4624,9 +4656,15 @@ div.risk-table.invesco {
 }
 /* Janus Henderson */
 div.risk-table.janus-henderson {
-	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-janus-henderson.png);
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-janus-henderson-investors.png);
 	padding-top: 35px;
 	margin-top: 1.5em;
+}
+/* Brooks Macdonald */
+div.risk-table.brooks-macdonald {
+	background-image: url(../images/synaptic-risk-rating/provider-logos/logo-brooks-macdonald.png);
+	padding-top: 48px;
+    margin-top: 1.2em;
 }
 /* Liontrust */
 div.risk-table.liontrust {

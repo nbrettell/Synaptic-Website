@@ -3,10 +3,6 @@
 
   Drupal.behaviors.eu_cookie_compliance_popup = {
     attach: function (context, settings) {
-      if (context !== document) {
-        return;
-      }
-
       $('body').once('eu-cookie-compliance', function () {
         // If configured, check JSON callback to determine if in EU.
         if (Drupal.settings.eu_cookie_compliance.popup_eu_only_js) {
@@ -14,7 +10,7 @@
             var url = Drupal.settings.basePath + 'eu-cookie-compliance-check';
             var data = {};
             $.getJSON(url, data, function (data) {
-              // If in the EU, show the compliance popup.
+              // If in the EU, show the compliance banner.
               if (data.in_eu) {
                 Drupal.eu_cookie_compliance.execute();
               }
@@ -27,7 +23,7 @@
           }
         }
 
-        // Otherwise, fallback to standard behavior which is to render the popup.
+        // Otherwise, fallback to standard behavior which is to render the banner.
         else {
           Drupal.eu_cookie_compliance.execute();
         }
@@ -51,7 +47,14 @@
       var status = Drupal.eu_cookie_compliance.getCurrentStatus();
       if (status === 0 || status === null) {
         if (!Drupal.settings.eu_cookie_compliance.disagree_do_not_show_popup || status === null) {
-          Drupal.eu_cookie_compliance.createPopup(Drupal.settings.eu_cookie_compliance.popup_html_info);
+          // Detect mobile here and use mobile_popup_html_info, if we have a mobile device.
+          if (window.matchMedia('(max-width: ' + Drupal.settings.eu_cookie_compliance.mobile_breakpoint + 'px)').matches && Drupal.settings.eu_cookie_compliance.use_mobile_message) {
+            Drupal.eu_cookie_compliance.createPopup(Drupal.settings.eu_cookie_compliance.mobile_popup_html_info);
+          }
+          else {
+            Drupal.eu_cookie_compliance.createPopup(Drupal.settings.eu_cookie_compliance.popup_html_info);
+          }
+
           Drupal.eu_cookie_compliance.attachAgreeEvents();
         }
       } else if (status === 1 && Drupal.settings.eu_cookie_compliance.popup_agreed_enabled) {
@@ -76,10 +79,10 @@
     var height = 0;
     if (Drupal.settings.eu_cookie_compliance.popup_position) {
       $popup.prependTo('body');
-      height = $popup.height();
+      height = $popup.outerHeight();
       $popup.show()
-        .attr('class', 'sliding-popup-top clearfix')
-        .css('top', -1 * height)
+        .attr({ class: 'sliding-popup-top clearfix' })
+        .css({ top: -1 * height })
         .animate({ top: 0 }, Drupal.settings.eu_cookie_compliance.popup_delay, null, function () {
           $popup.trigger('eu_cookie_compliance_popup_open');
         });
@@ -90,10 +93,10 @@
         $popup.appendTo('body');
       }
 
-      height = $popup.height();
+      height = $popup.outerHeight();
       $popup.show()
-        .attr('class', 'sliding-popup-bottom')
-        .css('bottom', -1 * height)
+        .attr({ class: 'sliding-popup-bottom' })
+        .css({ bottom: -1 * height })
         .animate({ bottom: 0 }, Drupal.settings.eu_cookie_compliance.popup_delay, null, function () {
           $popup.trigger('eu_cookie_compliance_popup_open');
         });
@@ -184,30 +187,33 @@
 
   Drupal.eu_cookie_compliance.changeStatus = function (value) {
     var status = Drupal.eu_cookie_compliance.getCurrentStatus();
+    var reloadPage = Drupal.settings.eu_cookie_compliance.reload_page;
     if (status === value) {
       return;
     }
 
     if (Drupal.settings.eu_cookie_compliance.popup_position) {
-      $('.sliding-popup-top').animate({ top: $('#sliding-popup').height() * -1 }, Drupal.settings.eu_cookie_compliance.popup_delay, function () {
-        if (status === null) {
+      $('.sliding-popup-top').animate({ top: $('#sliding-popup').outerHeight() * -1 }, Drupal.settings.eu_cookie_compliance.popup_delay, function () {
+        if (status === null && !reloadPage) {
           $('#sliding-popup').html(Drupal.settings.eu_cookie_compliance.popup_html_agreed).animate({ top: 0 }, Drupal.settings.eu_cookie_compliance.popup_delay);
           Drupal.eu_cookie_compliance.attachHideEvents();
         } else if (status === 1) {
           $('#sliding-popup').remove().trigger('eu_cookie_compliance_popup_close');
-          Drupal.eu_cookie_compliance.reloadPage();
         }
       });
     } else {
-      $('.sliding-popup-bottom').animate({ bottom: $('#sliding-popup').height() * -1 }, Drupal.settings.eu_cookie_compliance.popup_delay, function () {
-        if (status === null) {
+      $('.sliding-popup-bottom').animate({ bottom: $('#sliding-popup').outerHeight() * -1 }, Drupal.settings.eu_cookie_compliance.popup_delay, function () {
+        if (status === null && !reloadPage) {
           $('#sliding-popup').html(Drupal.settings.eu_cookie_compliance.popup_html_agreed).animate({ bottom: 0 }, Drupal.settings.eu_cookie_compliance.popup_delay);
           Drupal.eu_cookie_compliance.attachHideEvents();
         } else if (status === 1) {
           $('#sliding-popup').remove().trigger('eu_cookie_compliance_popup_close');
-          Drupal.eu_cookie_compliance.reloadPage();
         }
       });
+    }
+
+    if (reloadPage) {
+      location.reload();
     }
 
     Drupal.eu_cookie_compliance.setStatus(value);
@@ -257,12 +263,6 @@
     }
 
     return cookieEnabled;
-  };
-
-  Drupal.eu_cookie_compliance.reloadPage = function () {
-    if (Drupal.settings.eu_cookie_compliance.reload_page) {
-      location.reload();
-    }
   };
 
   // This code upgrades the cookie agreed status when upgrading for an old version.
