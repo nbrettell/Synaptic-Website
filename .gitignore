@@ -8,4 +8,4 @@ sites/*/settings*.php
 # Ignore some other stuff
 .DS_Store
 .htaccess
-wysiwyg
+html-wysiwyg
